@@ -10,13 +10,20 @@ export function Header() {
   const pathname = usePathname()
 
   const isActive = (href: string) => pathname === href
+  const isDeveloperPage = pathname === "/developer"
+  const isDesignerPage = pathname === "/designer"
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className={cn(
+        "sticky top-0 z-50 w-full border-b border-border/40",
+        isDeveloperPage && "bg-[#0b1020]/95 backdrop-blur supports-[backdrop-filter]:bg-[#0b1020]/60",
+        isDesignerPage && "bg-orange-500/95 backdrop-blur supports-[backdrop-filter]:bg-orange-500/60",
+        !isDeveloperPage && !isDesignerPage && "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      )}
     >
       <div className="container flex max-w-screen-2xl items-center py-8 pb-4">
         <div className="flex flex-1 items-center justify-center">
@@ -24,7 +31,11 @@ export function Header() {
             {/* Early - 절대 위치로 고정, y축만 이동 */}
             <div className="relative w-24 md:w-32">
               <motion.span
-                className="text-3xl md:text-4xl font-bold absolute right-0 h-12 flex items-center"
+                className={cn(
+                  "text-3xl md:text-4xl font-bold absolute right-0 h-12 flex items-center",
+                  isDeveloperPage && "text-lime-300",
+                  isDesignerPage && "text-yellow-300"
+                )}
                 animate={{
                   y: isActive("/developer") ? 0 : isActive("/artist") ? 56 : isActive("/designer") ? 112 : 0
                 }}
@@ -42,8 +53,12 @@ export function Header() {
                     "text-2xl md:text-3xl font-bold cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
                     "font-mono tracking-tight",
                     isActive("/developer") 
-                      ? "theme-developer nav-active" 
-                      : "text-muted-foreground/60 hover:text-lime-400"
+                      ? "text-lime-300 drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]" 
+                      : isDeveloperPage
+                        ? "text-lime-300/60 hover:text-lime-300"
+                        : isDesignerPage
+                          ? "text-yellow-300/60 hover:text-lime-300"
+                          : "text-muted-foreground/60 hover:text-lime-300"
                   )}
                 >
                   Developer
@@ -57,7 +72,11 @@ export function Header() {
                     "font-serif italic",
                     isActive("/artist") 
                       ? "theme-artist nav-active" 
-                      : "text-muted-foreground/60 hover:text-slate-900 dark:hover:text-slate-100"
+                      : isDeveloperPage
+                        ? "text-lime-300/60 hover:text-slate-900 dark:hover:text-slate-100"
+                        : isDesignerPage
+                          ? "text-yellow-300/60 hover:text-slate-900 dark:hover:text-slate-100"
+                          : "text-muted-foreground/60 hover:text-slate-900 dark:hover:text-slate-100"
                   )}
                 >
                   Artist
@@ -69,8 +88,12 @@ export function Header() {
                   className={cn(
                     "text-3xl md:text-4xl font-black cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
                     isActive("/designer") 
-                      ? "text-orange-600" 
-                      : "text-muted-foreground/60 hover:text-orange-600"
+                      ? "text-yellow-300" 
+                      : isDeveloperPage
+                        ? "text-lime-300/60 hover:text-orange-600"
+                        : isDesignerPage
+                          ? "text-yellow-300/60 hover:text-yellow-300"
+                          : "text-muted-foreground/60 hover:text-orange-600"
                   )}
                 >
                   Designer
@@ -81,7 +104,11 @@ export function Header() {
             {/* Club - 절대 위치로 고정, y축만 이동 */}
             <div className="relative w-24 md:w-32">
               <motion.span
-                className="text-3xl md:text-4xl font-bold absolute left-0 h-12 flex items-center"
+                className={cn(
+                  "text-3xl md:text-4xl font-bold absolute left-0 h-12 flex items-center",
+                  isDeveloperPage && "text-lime-300",
+                  isDesignerPage && "text-yellow-300"
+                )}
                 animate={{
                   y: isActive("/developer") ? 0 : isActive("/artist") ? 56 : isActive("/designer") ? 112 : 0
                 }}

@@ -1,80 +1,36 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { siteConfig } from "@/config/site"
 
-export default function Home() {
+export default function DeveloperPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      {/* Hero Section */}
       <motion.section
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center space-y-8 py-20"
+        transition={{ duration: 0.4 }}
+        className="space-y-6"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl text-muted-foreground max-w-2xl mx-auto"
-        >
-          {siteConfig.description}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button size="lg" className="text-lg px-8">
-            지금 가입하기
-          </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8">
-            더 알아보기
-          </Button>
-        </motion.div>
-      </motion.section>
-
-      {/* Features Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20"
-      >
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "멘토링",
-              description: "경험 많은 개발자들과의 1:1 멘토링을 통해 빠르게 성장하세요.",
-            },
-            {
-              title: "프로젝트",
-              description: "실제 프로젝트를 통해 실무 경험을 쌓고 포트폴리오를 만들어보세요.",
-            },
-            {
-              title: "커뮤니티",
-              description: "같은 목표를 가진 개발자들과 함께 학습하고 성장하세요.",
-            },
-          ].map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center space-y-4 p-6 rounded-lg border border-border/40 hover:border-border transition-colors"
+        <h1 className="text-4xl font-extrabold tracking-tight text-lime-300 drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]">
+          Early Developer Club
+        </h1>
+        <p className="text-muted-foreground">
+          픽셀 게임 감성의 인터랙션과 레트로한 비주얼을 실험합니다.
+        </p>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="rounded-md border border-lime-500/30 bg-[#0b1020] text-lime-300 p-6 shadow-[0_0_0_1px_rgba(163,230,53,0.15)]"
             >
-              <h3 className="text-xl font-semibold">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </motion.div>
+              <div className="font-mono text-sm"># {i + 1}</div>
+              <div className="mt-2 font-bold">Retro Pixel Card</div>
+            </div>
           ))}
         </div>
       </motion.section>
     </div>
   )
 }
+
+

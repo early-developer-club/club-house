@@ -132,7 +132,7 @@ export function CustomCursor({ children }: CustomCursorProps) {
   const [isVisible, setIsVisible] = useState(false)
   const pathname = usePathname()
 
-  const isDeveloperPage = pathname === "/developer"
+  const isDeveloperPage = pathname === "/"
   const isArtistPage = pathname === "/artist"
   const isDesignerPage = pathname === "/designer"
 

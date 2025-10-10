@@ -10,7 +10,7 @@ export function Header() {
   const pathname = usePathname()
 
   const isActive = (href: string) => pathname === href
-  const isDeveloperPage = pathname === "/developer"
+  const isDeveloperPage = pathname === "/"
   const isArtistPage = pathname === "/artist"
   const isDesignerPage = pathname === "/designer"
 
@@ -50,12 +50,12 @@ export function Header() {
             
             {/* 세로 정렬된 버튼들 */}
             <nav className="flex flex-col gap-2">
-              <Link href="/developer">
+              <Link href="/">
                 <span
                   className={cn(
                     "text-2xl md:text-3xl font-bold cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
                     "font-mono tracking-tight",
-                    isActive("/developer") 
+                    isActive("/") 
                       ? "text-lime-300 drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]" 
                       : isDeveloperPage
                         ? "text-lime-300/60 hover:text-lime-300"

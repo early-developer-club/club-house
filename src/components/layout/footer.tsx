@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 export function Footer() {
   const pathname = usePathname()
-  const isDeveloperPage = pathname === "/developer"
+  const isDeveloperPage = pathname === "/"
   const isDesignerPage = pathname === "/designer"
 
   return (

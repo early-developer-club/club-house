@@ -12,7 +12,7 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const pathname = usePathname()
-  const isDeveloperPage = pathname === "/developer"
+  const isDeveloperPage = pathname === "/"
   const isArtistPage = pathname === "/artist"
   const isDesignerPage = pathname === "/designer"
 

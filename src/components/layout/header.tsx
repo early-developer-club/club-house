@@ -11,6 +11,7 @@ export function Header() {
 
   const isActive = (href: string) => pathname === href
   const isDeveloperPage = pathname === "/developer"
+  const isArtistPage = pathname === "/artist"
   const isDesignerPage = pathname === "/designer"
 
   return (
@@ -21,8 +22,9 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full border-b border-border/40",
         isDeveloperPage && "bg-[#0b1020]/95 backdrop-blur supports-[backdrop-filter]:bg-[#0b1020]/60",
+        isArtistPage && "bg-slate-50/95 backdrop-blur supports-[backdrop-filter]:bg-slate-50/60",
         isDesignerPage && "bg-orange-500/95 backdrop-blur supports-[backdrop-filter]:bg-orange-500/60",
-        !isDeveloperPage && !isDesignerPage && "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+        !isDeveloperPage && !isArtistPage && !isDesignerPage && "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
       )}
     >
       <div className="container flex max-w-screen-2xl items-center py-8 pb-4">
@@ -34,6 +36,7 @@ export function Header() {
                 className={cn(
                   "text-3xl md:text-4xl font-bold absolute right-0 h-12 flex items-center",
                   isDeveloperPage && "text-lime-300",
+                  isArtistPage && "text-slate-900",
                   isDesignerPage && "text-yellow-300"
                 )}
                 animate={{
@@ -56,6 +59,8 @@ export function Header() {
                       ? "text-lime-300 drop-shadow-[0_0_8px_rgba(163,230,53,0.5)]" 
                       : isDeveloperPage
                         ? "text-lime-300/60 hover:text-lime-300"
+                        : isArtistPage
+                          ? "text-slate-900/60 hover:text-slate-900"
                         : isDesignerPage
                           ? "text-yellow-300/60 hover:text-lime-300"
                           : "text-muted-foreground/60 hover:text-lime-300"
@@ -71,9 +76,11 @@ export function Header() {
                     "text-3xl md:text-4xl cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
                     "font-serif italic",
                     isActive("/artist") 
-                      ? "theme-artist nav-active" 
+                      ? "text-slate-900" 
                       : isDeveloperPage
                         ? "text-lime-300/60 hover:text-slate-900 dark:hover:text-slate-100"
+                        : isArtistPage
+                          ? "text-slate-900/60 hover:text-slate-900"
                         : isDesignerPage
                           ? "text-yellow-300/60 hover:text-slate-900 dark:hover:text-slate-100"
                           : "text-muted-foreground/60 hover:text-slate-900 dark:hover:text-slate-100"
@@ -91,6 +98,8 @@ export function Header() {
                       ? "text-yellow-300" 
                       : isDeveloperPage
                         ? "text-lime-300/60 hover:text-orange-600"
+                        : isArtistPage
+                          ? "text-slate-900/60 hover:text-orange-600"
                         : isDesignerPage
                           ? "text-yellow-300/60 hover:text-yellow-300"
                           : "text-muted-foreground/60 hover:text-orange-600"
@@ -107,6 +116,7 @@ export function Header() {
                 className={cn(
                   "text-3xl md:text-4xl font-bold absolute left-0 h-12 flex items-center",
                   isDeveloperPage && "text-lime-300",
+                  isArtistPage && "text-slate-900",
                   isDesignerPage && "text-yellow-300"
                 )}
                 animate={{

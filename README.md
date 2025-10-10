@@ -100,6 +100,18 @@ Early Developer Club
 - [x] 네비게이션 반응형 레이아웃
 - [x] Artist 페이지 다중 열 반응형
 
+### 9. 배포 및 운영
+- [x] Vercel 배포 완료
+- [x] Production URL 생성
+- [x] GitHub Repository Public 전환
+- [x] 자동 배포 설정 준비
+
+### 10. URL 구조 개선
+- [x] Developer 페이지를 홈(/)으로 변경
+- [x] /developer 경로 제거
+- [x] 홈 접근성 문제 해결
+- [x] 네비게이션 일관성 확보
+
 ## 🚧 진행 예정 작업
 
 ### 1. 콘텐츠 확장
@@ -124,7 +136,7 @@ Early Developer Club
 - [ ] 연락처 폼
 
 ### 5. 배포 및 운영
-- [ ] Vercel 배포 설정
+- [x] Vercel 배포 설정
 - [ ] 도메인 연결
 - [ ] 분석 도구 연동 (Google Analytics)
 
@@ -176,6 +188,22 @@ npm run build
 # 프로덕션 실행
 npm start
 ```
+
+## 🌐 배포 정보
+
+### Production URL
+- **Live Site**: https://club-house-ehnwmdazn-da-ins-projects.vercel.app
+- **Vercel Dashboard**: https://vercel.com/da-ins-projects/club-house
+
+### 배포 플랫폼
+- **Vercel**: Next.js 최적화된 배포
+- **자동 배포**: GitHub 연동 준비 완료
+- **CDN**: 전 세계 빠른 로딩
+
+### GitHub Repository
+- **Repository**: https://github.com/early-developer-club/club-house
+- **Status**: Public
+- **Branch**: main
 
 ## 📝 개발 노트
 

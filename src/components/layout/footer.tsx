@@ -19,7 +19,7 @@ export function Footer() {
       viewport={{ once: true }}
       className="border-t border-border/40"
     >
-      <div className="container max-w-screen-2xl mx-auto px-4 py-6 md:py-0">
+      <div className="container mx-auto px-4 py-6 md:py-0">
         <div className="flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex flex-col items-center gap-4 md:flex-row md:gap-2">
             <p className={cn(
@@ -27,7 +27,7 @@ export function Footer() {
               isDeveloperPage && "text-lime-300/80",
               isDesignerPage && "text-yellow-300/80"
             )}>
-              © 2024 {siteConfig.name}. All rights reserved.
+              © 2025 {siteConfig.name}. All rights reserved.
             </p>
           </div>
           <div className="flex items-center space-x-4">

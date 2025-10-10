@@ -14,19 +14,10 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         className="text-center space-y-8 py-20"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight"
-        >
-          {siteConfig.name}
-        </motion.h1>
-        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-muted-foreground max-w-2xl mx-auto"
         >
           {siteConfig.description}
@@ -35,7 +26,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button size="lg" className="text-lg px-8">

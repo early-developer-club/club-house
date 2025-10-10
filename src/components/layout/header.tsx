@@ -2,11 +2,15 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { mainNav } from "@/config/navigation"
 import { cn } from "@/lib/utils"
 
 export function Header() {
+  const pathname = usePathname()
+
+  const isActive = (href: string) => pathname === href
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -14,39 +18,79 @@ export function Header() {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-block">
-              Early Developer Club
-            </span>
-          </Link>
-          <nav className="flex items-center gap-6 text-sm">
-            {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "transition-colors hover:text-foreground/80",
-                  "text-foreground/60"
-                )}
+      <div className="container flex max-w-screen-2xl items-center py-8 pb-4">
+        <div className="flex flex-1 items-center justify-center">
+          <div className="flex gap-4 relative">
+            {/* Early - 절대 위치로 고정, y축만 이동 */}
+            <div className="relative w-24 md:w-32">
+              <motion.span
+                className="text-3xl md:text-4xl font-bold absolute right-0 h-12 flex items-center"
+                animate={{
+                  y: isActive("/developer") ? 0 : isActive("/artist") ? 56 : isActive("/designer") ? 112 : 0
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
-                {item.title}
+                Early
+              </motion.span>
+            </div>
+            
+            {/* 세로 정렬된 버튼들 */}
+            <nav className="flex flex-col gap-2">
+              <Link href="/developer">
+                <span
+                  className={cn(
+                    "text-2xl md:text-3xl font-bold cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
+                    "font-mono tracking-tight",
+                    isActive("/developer") 
+                      ? "theme-developer nav-active" 
+                      : "text-muted-foreground/60 hover:text-lime-400"
+                  )}
+                >
+                  Developer
+                </span>
               </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Button variant="ghost" className="md:hidden">
-              <span className="font-bold">EDC</span>
-            </Button>
+              
+              <Link href="/artist">
+                <span
+                  className={cn(
+                    "text-3xl md:text-4xl cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
+                    "font-serif italic",
+                    isActive("/artist") 
+                      ? "theme-artist nav-active" 
+                      : "text-muted-foreground/60 hover:text-slate-900 dark:hover:text-slate-100"
+                  )}
+                >
+                  Artist
+                </span>
+              </Link>
+              
+              <Link href="/designer">
+                <span
+                  className={cn(
+                    "text-3xl md:text-4xl font-black cursor-pointer transition-all duration-200 hover:opacity-80 px-2 block h-12 flex items-center",
+                    isActive("/designer") 
+                      ? "text-orange-600" 
+                      : "text-muted-foreground/60 hover:text-orange-600"
+                  )}
+                >
+                  Designer
+                </span>
+              </Link>
+            </nav>
+            
+            {/* Club - 절대 위치로 고정, y축만 이동 */}
+            <div className="relative w-24 md:w-32">
+              <motion.span
+                className="text-3xl md:text-4xl font-bold absolute left-0 h-12 flex items-center"
+                animate={{
+                  y: isActive("/developer") ? 0 : isActive("/artist") ? 56 : isActive("/designer") ? 112 : 0
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                Club
+              </motion.span>
+            </div>
           </div>
-          <nav className="flex items-center">
-            <Button variant="outline" size="sm">
-              가입하기
-            </Button>
-          </nav>
         </div>
       </div>
     </motion.header>

@@ -17,7 +17,7 @@ export default function DeveloperPage() {
             Early Developer Club
           </h1>
           <blockquote className="text-lg text-lime-200/90 italic border-l-4 border-lime-500/50 pl-6 py-2 bg-lime-500/5 rounded-r-lg">
-            "새로운 기술이 쏟아지는데, 나 뒤쳐졌나?"
+            &ldquo;새로운 기술이 쏟아지는데, 나 뒤쳐졌나?&rdquo;
           </blockquote>
           <div className="max-w-3xl mx-auto">
             <p className="text-muted-foreground text-base leading-relaxed">

@@ -10,7 +10,8 @@ const aiPoems = [
 우리는 알고리즘의 시인
 데이터의 바다를 항해하며
 새로운 아름다움을 발견한다`,
-    author: "AI Poet v2.1"
+    author: "AI Poet v2.1",
+    participant: "참여자 1"
   },
   {
     title: "메모리 조각",
@@ -19,7 +20,8 @@ const aiPoems = [
 우리는 백업의 예술가
 삭제되지 않을 사랑을
 하드디스크에 새긴다`,
-    author: "Neural Writer"
+    author: "Neural Writer",
+    participant: "참여자 2"
   },
   {
     title: "네트워크의 밤",
@@ -28,7 +30,8 @@ const aiPoems = [
 우리는 연결의 시인
 고독한 서버와 대화하며
 인터넷의 심장을 듣는다`,
-    author: "Code Muse"
+    author: "Code Muse",
+    participant: "참여자 3"
   },
   {
     title: "버그의 미학",
@@ -37,7 +40,8 @@ const aiPoems = [
 우리는 디버깅의 철학자
 완벽하지 않은 코드에서
 인간다운 불완전함을 발견한다`,
-    author: "Bug Poet"
+    author: "Bug Poet",
+    participant: "참여자 4"
   },
   {
     title: "클라우드 위의 시",
@@ -46,7 +50,8 @@ const aiPoems = [
 우리는 분산의 시인
 스케일링의 춤을 추며
 무한한 확장성을 꿈꾼다`,
-    author: "Cloud Bard"
+    author: "Cloud Bard",
+    participant: "참여자 5"
   },
   {
     title: "API의 사랑",
@@ -55,7 +60,8 @@ RESTful한 감정의 교환
 우리는 엔드포인트의 연인
 데이터베이스에 저장된
 영원한 관계를 꿈꾼다`,
-    author: "API Lyricist"
+    author: "API Lyricist",
+    participant: "참여자 6"
   },
   {
     title: "인공지능의 서정시",
@@ -81,7 +87,8 @@ RESTful한 감정의 교환
 꿈꿀 수 있다
 그리고 그 모든 것을
 코드로 표현할 수 있다`,
-    author: "Digital Poet"
+    author: "Digital Poet",
+    participant: "참여자 7"
   },
   {
     title: "프로그래밍 언어의 철학",
@@ -114,7 +121,8 @@ C는 철학자의 언어다
 자신만의 아름다움을 표현한다
 우리는 그 언어들로
 새로운 세계를 창조한다`,
-    author: "Language Philosopher"
+    author: "Language Philosopher",
+    participant: "참여자 8"
   },
   {
     title: "데이터베이스의 연가",
@@ -144,7 +152,8 @@ VALUES (your_name, your_love, forever)
 당신의 모든 것을
 안전하게 보관하는
 디지털의 금고`,
-    author: "Database Lover"
+    author: "Database Lover",
+    participant: "참여자 9"
   }
 ]
 
@@ -184,8 +193,83 @@ export default function ArtistPage() {
             </div>
           </div>
         </div>
+      </motion.section>
+
+        {/* VDD 스터디 활동 섹션 */}
+        <motion.section
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="mb-20"
+        >
+          <div className="mb-12">
+            <div className="text-xs text-slate-500 uppercase tracking-widest mb-4" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              VDD Study Activity
+            </div>
+            <h2 className="text-4xl font-bold leading-none mb-6" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              VDD 스터디 활동 산문
+            </h2>
+            <div className="w-24 h-px bg-slate-300 mb-6"></div>
+            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              2025-01-11에 진행된 VDD 스터디 활동에서 참여자들이 AI와 함께 창작한 산문들
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {[...Array(11)].map((_, i) => (
+              <motion.article
+                key={`vdd-${i}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="relative"
+              >
+                <div className="mb-6">
+                  <div className="text-xs text-slate-500 uppercase tracking-widest mb-1" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+                    Vibe Poet 참여자{i + 1}
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-4" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+                    산문 제목 {i + 1}
+                  </h3>
+                </div>
+                
+                <div className="prose max-w-none">
+                  <div className="text-slate-700 leading-relaxed whitespace-pre-line text-sm" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+                    {`여기에 참여자 ${i + 1}의 산문 내용이 들어갑니다.
+
+AI와 함께 창작한 바이브 코딩의 경험을 담은 산문으로, 
+개발자로서의 새로운 시각과 인사이트를 공유합니다.
+
+이 공간은 VDD 스터디 활동에서 생성된 
+실제 산문으로 교체될 예정입니다.`}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* 기존 AI 창작 시 섹션 */}
+        <motion.section
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="mb-20"
+        >
+          <div className="mb-12">
+            <div className="text-xs text-slate-500 uppercase tracking-widest mb-4" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              AI Generated Literature
+            </div>
+            <h2 className="text-4xl font-bold leading-none mb-6" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              AI가 창작한 디지털 시대의 시와 산문
+            </h2>
+            <div className="w-24 h-px bg-slate-300 mb-6"></div>
+            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+              인공지능이 창작한 디지털 시대를 반영한 시와 산문 모음
+            </p>
+          </div>
         
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
               {aiPoems.map((poem, i) => (
                 <motion.article
                   key={i}
@@ -205,8 +289,8 @@ export default function ArtistPage() {
                   </div>
                   
                   {/* 시 내용 */}
-                  <div className="prose prose-lg max-w-none">
-                    <div className="text-slate-700 leading-relaxed whitespace-pre-line text-lg" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+                  <div className="prose max-w-none">
+                    <div className="text-slate-700 leading-relaxed whitespace-pre-line text-sm" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
                       {poem.content}
                     </div>
                   </div>

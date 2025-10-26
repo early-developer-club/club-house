@@ -2,19 +2,19 @@ import { NavItem } from "@/types"
 
 export const mainNav: NavItem[] = [
   {
-    title: "홈",
+    title: "Home",
     href: "/",
   },
   {
-    title: "소개",
-    href: "/about",
+    title: "Archive",
+    href: "/archive",
   },
   {
-    title: "활동",
-    href: "/activities",
+    title: "Member",
+    href: "/member",
   },
   {
-    title: "커뮤니티",
-    href: "/community",
+    title: "Join",
+    href: "/join",
   },
 ]

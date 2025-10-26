@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { mainNav } from "@/config/navigation"
+import { Logo } from "@/components/ui/logo"
 
 export function Header() {
   const pathname = usePathname()
@@ -19,8 +20,8 @@ export function Header() {
       className="sticky top-0 z-50 w-full bg-white"
     >
       <div className="flex px-4 items-center justify-between h-16 max-w-7xl mx-auto">
-        <Link href="/" className="text-2xl font-bold text-black">
-          Early AI Club
+        <Link href="/" className="hover:text-gray-600 transition-colors">
+          <Logo />
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
           {mainNav.map((item) => (

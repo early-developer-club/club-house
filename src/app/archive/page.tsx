@@ -7,7 +7,7 @@ import { AiPoems } from "@/components/archive/ai-poems"
 export default function ArchivePage() {
   return (
     <div className="min-h-screen bg-white text-black">
-      <div className="w-full px-4 py-16">
+      <div className="w-full px-4 py-4">
         <ArchiveHeader />
         <VddArticles />
         <AiPoems />

@@ -40,53 +40,6 @@ export function VddSection() {
         </a>
       </div>
 
-      {/* 참여자 후기 섹션 */}
-      <div className="mt-16">
-        <h3 className="text-xl font-semibold text-black mb-6 text-center">
-          참여자 후기
-        </h3>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <a
-            href="https://da-in.github.io/posts/early-developer-club-vdd-3/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
-          >
-            <div className="text-sm text-lime-600 font-mono mb-2">3주차</div>
-            <div className="text-black font-medium text-sm">Early Developer Club VDD 스터디 3주차 활동 기록 - 간단한 바이브 코딩 실습</div>
-          </a>
-
-          <a
-            href="https://da-in.github.io/posts/early-developer-club-vdd-2/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
-          >
-            <div className="text-sm text-lime-600 font-mono mb-2">2주차</div>
-            <div className="text-black font-medium text-sm">Early Developer Club VDD 스터디 2주차 활동 기록 - 환경 세팅</div>
-          </a>
-
-          <a
-            href="https://da-in.github.io/posts/early-developer-club-vdd-1/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
-          >
-            <div className="text-sm text-lime-600 font-mono mb-2">1주차</div>
-            <div className="text-black font-medium text-sm">Early Developer Club VDD 스터디 1주차 활동 기록 - Onboarding</div>
-          </a>
-
-          <a
-            href="https://da-in.github.io/posts/early-developer-club-vdd/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
-          >
-            <div className="text-sm text-lime-600 font-mono mb-2">소개</div>
-            <div className="text-black font-medium text-sm">Early Developer Club과 VDD(Vibe Driven Development) 스터디</div>
-          </a>
-        </div>
-      </div>
     </motion.section>
   )
 }

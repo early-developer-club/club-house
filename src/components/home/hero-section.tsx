@@ -12,7 +12,7 @@ export const HeroSection = forwardRef<HTMLElement>((props, ref) => {
       transition={{ duration: 0.4 }}
       className="space-y-6"
     >
-      <div className="text-8xl lg:text-9xl xl:text-[12rem] font-extrabold tracking-tight text-black font-weight-animation" style={{ fontFamily: 'Bitcount Grid Single, monospace' }}>
+      <div className="text-8xl lg:text-9xl xl:text-[12rem] font-extrabold tracking-tight text-black font-weight-animation font-bitcount">
         Early<br/>
         Developer<br/>
         Club

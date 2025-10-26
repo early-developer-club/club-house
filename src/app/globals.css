@@ -28,6 +28,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;
+  font-size: 14px; /* 기본 폰트 사이즈 14px */
 }
 
 /* 애니메이션을 위한 기본 스타일 */
@@ -122,4 +123,9 @@ body {
 
 .font-weight-animation {
   animation: fontWeightPulse 10s ease-in-out infinite;
+}
+
+/* Bitcount Grid Single 폰트 클래스 */
+.font-bitcount {
+  font-family: 'Bitcount Grid Single', monospace;
 }

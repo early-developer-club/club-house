@@ -11,14 +11,12 @@ export function MemberHero() {
       className="space-y-8"
     >
       <div className="text-center space-y-6">
-        <h1 className="text-4xl font-extrabold tracking-tight text-black">
+        <h1 className="text-4xl lg:text-6xl tracking-tight text-black font-bitcount mb-6">
           Member
         </h1>
-        <div className="max-w-3xl mx-auto">
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Early AI Club에 참여하고 있는 멤버들을 만나보세요.
-          </p>
-        </div>
+        <p className="text-gray-600 text-sm">
+          멤버들이 AI를 활용하여 생성한 프로필 이미지입니다.
+        </p>
       </div>
     </motion.section>
   )

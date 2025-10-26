@@ -23,6 +23,66 @@ export function VddArticles() {
         </p>
       </div>
 
+      {/* 참여자 후기 섹션 */}
+      <div className="mb-16">
+        <h3 className="text-2xl font-bold text-black mb-8 text-center" style={{ fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif' }}>
+          참여자 후기
+        </h3>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <motion.a
+            href="https://da-in.github.io/posts/early-developer-club-vdd-3/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
+          >
+            <div className="text-sm text-lime-600 font-mono mb-3">3주차</div>
+            <div className="text-black font-medium text-sm leading-relaxed">Early Developer Club VDD 스터디 3주차 활동 기록 - 간단한 바이브 코딩 실습</div>
+          </motion.a>
+
+          <motion.a
+            href="https://da-in.github.io/posts/early-developer-club-vdd-2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
+          >
+            <div className="text-sm text-lime-600 font-mono mb-3">2주차</div>
+            <div className="text-black font-medium text-sm leading-relaxed">Early Developer Club VDD 스터디 2주차 활동 기록 - 환경 세팅</div>
+          </motion.a>
+
+          <motion.a
+            href="https://da-in.github.io/posts/early-developer-club-vdd-1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
+          >
+            <div className="text-sm text-lime-600 font-mono mb-3">1주차</div>
+            <div className="text-black font-medium text-sm leading-relaxed">Early Developer Club VDD 스터디 1주차 활동 기록 - Onboarding</div>
+          </motion.a>
+
+          <motion.a
+            href="https://da-in.github.io/posts/early-developer-club-vdd/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:bg-gray-50"
+          >
+            <div className="text-sm text-lime-600 font-mono mb-3">소개</div>
+            <div className="text-black font-medium text-sm leading-relaxed">Early Developer Club과 VDD(Vibe Driven Development) 스터디</div>
+          </motion.a>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {[...Array(11)].map((_, i) => (
           <motion.article

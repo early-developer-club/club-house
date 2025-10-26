@@ -7,6 +7,7 @@ export const members: Member[] = [
     role: "Frontend Developer",
     bio: "React와 Next.js를 주로 사용하는 프론트엔드 개발자입니다. AI 도구를 활용한 개발에 관심이 많습니다.",
     avatar: "A",
+    profileImage: "1.webp",
     links: {
       github: "https://github.com/da-in",
       blog: "https://da-in.github.io",
@@ -150,5 +151,19 @@ export const members: Member[] = [
     },
     activities: ["VDD 스터디"],
     joinDate: "2024-12-28"
+  },
+  {
+    id: "12",
+    name: "참여자 12",
+    role: "AI Engineer",
+    bio: "인공지능과 머신러닝 모델 개발에 전문성을 가진 엔지니어입니다.",
+    avatar: "L",
+    links: {
+      github: "https://github.com/participant12",
+      linkedin: "https://linkedin.com/in/participant12",
+      email: "participant12@example.com"
+    },
+    activities: ["VDD 스터디"],
+    joinDate: "2024-12-30"
   }
 ]

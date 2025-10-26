@@ -10,23 +10,23 @@ export function ContactSection() {
             href="mailto:contact@earlydevclub.com"
             className="text-lime-600 hover:text-lime-700"
           >
-            contact@earlydevclub.com
+            talown@naver.com
           </a>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-black">GitHub</h3>
           <a 
-            href="https://github.com/earlydevclub"
+            href="https://github.com/early-developer-club"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lime-600 hover:text-lime-700"
           >
-            github.com/earlydevclub
+            github.com/early-developer-club
           </a>
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="text-lg font-semibold text-black">Discord</h3>
           <a 
             href="https://discord.gg/your-discord-link"
@@ -36,7 +36,7 @@ export function ContactSection() {
           >
             Early Developer Club
           </a>
-        </div>
+        </div> */}
       </div>
       
       <div className="mt-20 text-center">

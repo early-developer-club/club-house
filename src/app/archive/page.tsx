@@ -1,16 +1,10 @@
 "use client"
 
-import { ArchiveHeader } from "@/components/archive/archive-header"
-import { VddArticles } from "@/components/archive/vdd-articles"
-import { AiPoems } from "@/components/archive/ai-poems"
-
 export default function ArchivePage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="w-full px-4 py-4">
-        <ArchiveHeader />
-        <VddArticles />
-        <AiPoems />
+        {/* Archive 페이지 내용이 여기에 추가됩니다 */}
       </div>
     </div>
   )

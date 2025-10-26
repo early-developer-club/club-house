@@ -15,7 +15,7 @@ export function JoinHero() {
           className="text-4xl lg:text-6xl tracking-tight text-black font-bitcount mb-6"
           style={{ fontFamily: 'Bitcount Grid Single, monospace' }}
         >
-          Join Early AI Club!
+          Join Club!
         </h1>
         <div className="max-w-4xl mx-auto">
           <p className="text-xl text-gray-600 leading-relaxed mb-6">

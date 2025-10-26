@@ -38,12 +38,6 @@ export default function ArtistArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <Link href="/archive" className="inline-flex items-center text-gray-600 hover:text-black mb-6 transition-colors">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Archive로 돌아가기
-          </Link>
           <h1 className="text-4xl lg:text-6xl font-bold text-black font-bitcount mb-6">
             Early Artist Club
           </h1>

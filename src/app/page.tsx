@@ -2,36 +2,36 @@
 
 import { HeroSection } from "@/components/home/hero-section"
 import { FollowingRocket } from "@/components/home/following-rocket"
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import Link from "next/link"
 import { useRef } from "react"
+import { blogs } from "@/data/archive"
+import { BlogItem } from "@/components/ui/blog-item"
 
 export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null)
+  const artistSectionRef = useRef<HTMLDivElement>(null)
+  const isArtistSectionInView = useInView(artistSectionRef, { once: true })
 
   const developerProjects = [
     {
       id: 1,
       title: "AI 코딩 어시스턴트",
       description: "VDD 스터디에서 개발한 AI와 함께하는 코딩 도구",
-      tech: ["React", "OpenAI API", "TypeScript"]
+      tech: ["React", "OpenAI API", "TypeScript"],
+      vibeTime: "25분",
+      thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop"
     },
     {
       id: 2,
       title: "바이브 코딩 플랫폼",
       description: "음악에 맞춰 코딩하는 새로운 개발 경험을 제공하는 플랫폼",
-      tech: ["Next.js", "Web Audio API", "Tailwind CSS"]
+      tech: ["Next.js", "Web Audio API", "Tailwind CSS"],
+      vibeTime: "18분",
+      thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop"
     }
   ]
 
-  const artistPoems = [
-    {
-      id: 1,
-      title: "코드와 꿈",
-      author: "참여자 A",
-      content: "if (dream == true) {\n  console.log('새로운 세상이 열린다');\n  return hope;\n}"
-    }
-  ]
 
   const designerProjects = [
     {
@@ -43,29 +43,10 @@ export default function HomePage() {
     }
   ]
 
-  const reviews = [
-    {
-      id: 1,
-      title: "VDD 스터디 3주차 활동 기록 - 간단한 바이브 코딩 실습",
-      author: "dain",
-      excerpt: "AI와 함께 코딩하는 새로운 경험을 해보았습니다. 생각보다 훨씬 자연스럽고 재미있었어요!",
-      date: "2024-12-15"
-    },
-    {
-      id: 2,
-      title: "Early Developer Club과 VDD(Vibe Driven Development) 스터디",
-      author: "dain",
-      excerpt: "Early Developer Club에 가입하게 된 계기와 VDD 스터디에 대한 소개를 담았습니다.",
-      date: "2024-12-01"
-    },
-    {
-      id: 3,
-      title: "AI 도구를 활용한 개발 경험기",
-      author: "참여자 B",
-      excerpt: "ChatGPT와 GitHub Copilot을 함께 사용하면서 느낀 점들을 정리했습니다.",
-      date: "2024-12-20"
-    }
-  ]
+  // archive.ts에서 최신 3개 블로그 가져오기
+  const reviews = blogs
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -78,56 +59,85 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-16"
+          className="mb-20"
         >
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-black font-bitcount">Early Developer Club</h2>
-            <Link href="/archive/developer" className="text-blue-600 hover:text-blue-700 font-medium">
+          <div className="flex flex-col items-center justify-between mb-8">
+            <h2 className="text-6xl text-center text-black font-bitcount">Early Developer Club</h2>
+            <Link href="/archive?filter=developer" className="font-medium">
               더보기 →
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {developerProjects.map((project, index) => (
-              <div key={project.id} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-100">
-                <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, idx) => (
-                    <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
-                      {tech}
-                    </span>
-                  ))}
+            <div className="grid gap-6 md:grid-cols-2">
+              {developerProjects.map((project, index) => (
+                <div key={project.id} className="border overflow-hidden">
+                  <div className="relative">
+                    <img 
+                      src={project.thumbnail} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs font-medium">
+                      {project.vibeTime}
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
         </motion.section>
 
         {/* Artist Club 섹션 */}
         <motion.section
+          ref={artistSectionRef}
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isArtistSectionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
+          className="mb-20"
         >
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-black font-bitcount">Early Artist Club</h2>
-            <Link href="/archive/artist" className="text-pink-600 hover:text-pink-700 font-medium">
-              더보기 →
-            </Link>
+          <div className="flex flex-col items-start mb-8">
+            <h2 className="text-6xl font-light text-black font-bitcount">
+              Early<br/>
+              Artist<br/>
+              Club
+            </h2>
+               <Link href="/archive?filter=artist" className="font-medium">
+                 더보기 →
+               </Link>
           </div>
-          <div className="max-w-2xl">
-            {artistPoems.map((poem) => (
-              <div key={poem.id} className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-6 border border-pink-100">
-                <h3 className="text-lg font-bold text-black mb-2">{poem.title}</h3>
-                <p className="text-sm text-gray-600 mb-4">작가: {poem.author}</p>
-                <div className="bg-white rounded-lg p-4 border border-pink-200">
-                  <pre className="text-sm text-gray-700 whitespace-pre-wrap font-mono leading-relaxed">
-                    {poem.content}
-                  </pre>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-black mb-2">지능의 파동</h3>
+            <p className="text-sm text-gray-600 mb-4">prompter A</p>
+               <div className="text-sm text-gray-700 leading-relaxed text-center max-w-70 break-keep">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="font-mono"
+                >
+                   <div>
+                     {["새", "벽", "처", "럼", " ", "맑", "은", " ", "알", "고", "리", "즘", "의", " ", "눈", " ", "잠", "든", " ", "세", "계", "의", " ", "틈", "을", " ", "조", "용", "히", " ", "해", "상", "한", "다", ".", "\n", "오", "래", "된", " ", "질", "문", "들", "은", " ", "액", "체", "처", "럼", " ", "증", "발", "하", "고", ",", " ", "데", "이", "터", "의", " ", "바", "다", "가", " ", "지", "혜", "의", " ", "빛", "을", " ", "뿜", "어", "낸", "다", ".", "\n", "무", "중", "력", "의", " ", "가", "능", "성", "으", "로", " ", "하", "루", "를", " ", "채", "우", "며", ",", " ", "우", "리", "는", " ", "논", "리", "적", " ", "도", "약", "의", " ", "즐", "거", "움", "에", " ", "빠", "진", "다", "."].map((char, index) => (
+                       <motion.span
+                         key={index}
+                         initial={{ opacity: 0 }}
+                         animate={isArtistSectionInView ? { opacity: 1 } : { opacity: 0 }}
+                         transition={{ duration: 0.1, delay: isArtistSectionInView ? 0.5 + index * 0.1 : 0 }}
+                       >
+                         {char === "\n" ? <><br/><br/></> : char}
+                       </motion.span>
+                     ))}
+                   </div>
+              </motion.div>
+            </div>
           </div>
         </motion.section>
 
@@ -136,33 +146,20 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-16"
+          className="mb-20"
         >
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-black font-bitcount">Early Designer Club</h2>
-            <Link href="/archive/designer" className="text-green-600 hover:text-green-700 font-medium">
-              더보기 →
-            </Link>
-          </div>
-          <div className="max-w-2xl">
-            {designerProjects.map((project) => (
-              <div key={project.id} className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border border-green-100">
-                <div className="mb-3">
-                  <span className="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium">
-                    {project.type}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool, idx) => (
-                    <span key={idx} className="px-2 py-1 bg-white text-gray-700 text-xs rounded border">
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col items-end">
+            <h2 className="text-6xl text-right font-bold text-black font-bitcount">
+              Early<br/>
+              Designer<br/>
+              Club
+            </h2>
+             <Link href="/archive?filter=designer" className="font-medium">
+               더보기 →
+             </Link>
+             <span>
+              Coming Soon...
+             </span>
           </div>
         </motion.section>
 
@@ -174,22 +171,20 @@ export default function HomePage() {
           className="mb-16"
         >
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-black font-bitcount">Reviews</h2>
-            <Link href="/archive/reviews" className="text-orange-600 hover:text-orange-700 font-medium">
-              더보기 →
-            </Link>
+            <h2 className="text-2xl font-bold">Reviews</h2>
+             <Link href="/archive" className="font-medium">
+               더보기 →
+             </Link>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-2">
             {reviews.map((review) => (
-              <div key={review.id} className="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border border-orange-100">
-                <h3 className="text-lg font-bold text-black mb-2">{review.title}</h3>
-                <p className="text-gray-600 mb-3 text-sm">{review.excerpt}</p>
-                <div className="flex items-center gap-4 text-sm text-gray-500">
-                  <span>작성자: {review.author}</span>
-                  <span>•</span>
-                  <span>{review.date}</span>
-                </div>
-              </div>
+              <BlogItem
+                key={review.id}
+                title={review.title}
+                excerpt={review.excerpt}
+                author={review.author}
+                date={review.date}
+              />
             ))}
           </div>
         </motion.section>

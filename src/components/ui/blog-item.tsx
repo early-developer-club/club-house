@@ -1,0 +1,29 @@
+interface BlogItemProps {
+  title: string
+  excerpt: string
+  author: string
+  date: string
+  category?: string
+  className?: string
+}
+
+export function BlogItem({ title, excerpt, author, date, category, className = "" }: BlogItemProps) {
+  return (
+    <div className={`p-4 border ${className}`}>
+      <h3 className="font-bold">{title}</h3>
+      <p className="text-gray-600 truncate">{excerpt}</p>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-1 text-gray-500">
+          <span>{author}</span>
+          <span>•</span>
+          <span>{date}</span>
+        </div>
+        {category && (
+          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+            {category}
+          </span>
+        )}
+      </div>
+    </div>
+  )
+}

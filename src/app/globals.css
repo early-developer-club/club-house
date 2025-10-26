@@ -2,9 +2,9 @@
 
 :root {
   /* 브랜드 컬러 */
-  --brand-primary: #00ff88;      /* 네온 그린 (매우 vivid한 초록) */
-  --brand-primary-dark: #00cc6a; /* 네온 그린 다크 */
-  --brand-primary-light: #33ff99; /* 네온 그린 라이트 */
+  --brand-primary: #22c55e;      /* 더 어두운 초록 (흰 글씨 대비 좋음) */
+  --brand-primary-dark: #16a34a; /* 더 어두운 초록 다크 */
+  --brand-primary-light: #4ade80; /* 더 어두운 초록 라이트 */
   
   /* 기본 컬러 */
   --background: #ffffff;

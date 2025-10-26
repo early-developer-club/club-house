@@ -17,7 +17,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full bg-background"
+      className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
     >
       <div className="flex px-4 items-center justify-between h-16 max-w-7xl mx-auto">
         <Link href="/" className="hover:text-muted-foreground transition-colors">
@@ -29,11 +29,30 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-brand-primary",
-                isActive(item.href) 
-                  ? "text-brand-primary" 
-                  : "text-muted-foreground"
+                "text-sm font-medium transition-colors",
+                item.title === "Join" 
+                  ? "px-4 py-2 rounded-lg shadow-sm text-white transition-colors"
+                  : cn(
+                      "hover:text-brand-primary",
+                      isActive(item.href) 
+                        ? "text-brand-primary font-semibold" 
+                        : "text-muted-foreground font-medium"
+                    )
               )}
+              style={item.title === "Join" ? {
+                backgroundColor: "var(--brand-primary)",
+                "--hover-bg": "var(--brand-primary-dark)"
+              } as React.CSSProperties : undefined}
+              onMouseEnter={(e) => {
+                if (item.title === "Join") {
+                  e.currentTarget.style.backgroundColor = "var(--brand-primary-dark)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (item.title === "Join") {
+                  e.currentTarget.style.backgroundColor = "var(--brand-primary)";
+                }
+              }}
             >
               {item.title}
             </Link>

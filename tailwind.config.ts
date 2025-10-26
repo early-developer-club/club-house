@@ -28,7 +28,7 @@ const config: Config = {
         'mono': ['var(--font-geist-mono)', 'monospace'],
       },
       colors: {
-        // 브랜드 컬러
+        // 브랜드 컬러 - CSS 변수 사용
         brand: {
           primary: "var(--brand-primary)",
           "primary-dark": "var(--brand-primary-dark)",

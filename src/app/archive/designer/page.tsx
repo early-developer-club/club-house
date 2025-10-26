@@ -40,7 +40,7 @@ export default function DesignerArchivePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         {/* 헤더 */}
         <motion.div
@@ -49,10 +49,10 @@ export default function DesignerArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl lg:text-6xl font-bold text-black font-bitcount mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
             Early Designer Club
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             AI 도구를 활용한 창의적인 디자인 작품들을 만나보세요
           </p>
         </motion.div>
@@ -82,22 +82,22 @@ export default function DesignerArchivePage() {
                       {design.type}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-2">{design.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{design.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{design.title}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{design.description}</p>
                   
                   {/* 사용 도구 */}
                   <div className="mb-4">
-                    <p className="text-xs text-gray-500 mb-2">사용 도구:</p>
+                    <p className="text-xs text-muted-foreground mb-2">사용 도구:</p>
                     <div className="flex flex-wrap gap-2">
                       {design.tools.map((tool, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-white text-gray-700 text-xs rounded border">
+                        <span key={idx} className="px-2 py-1 bg-background text-muted-foreground text-xs rounded border">
                           {tool}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <button className="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-colors text-sm font-medium">
+                  <button className="w-full bg-brand-primary text-background py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm font-medium">
                     작품 보기
                   </button>
                 </div>

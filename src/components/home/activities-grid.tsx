@@ -46,18 +46,18 @@ export function ActivitiesGrid() {
     <div>
 
       <div className="text-center space-y-6">
-      <div className="text-2xl text-lime-500 mb-4">🚀</div>
-      <h1 className="text-4xl font-extrabold tracking-tight text-black">
+      <div className="text-2xl text-brand-primary mb-4">🚀</div>
+      <h1 className="text-4xl font-extrabold tracking-tight text-foreground">
         Early Developer Club
       </h1>
-      <blockquote className="text-lg text-gray-600 italic border-l-4 border-lime-500 pl-6 py-2 bg-lime-50 rounded-r-lg">
+      <blockquote className="text-lg text-muted-foreground italic border-l-4 border-brand-primary pl-6 py-2 bg-brand-primary/5 rounded-r-lg">
         &ldquo;새로운 기술이 쏟아지는데, 나 뒤쳐졌나?&rdquo;
       </blockquote>
       <div className="max-w-3xl mx-auto">
-        <p className="text-gray-600 text-base leading-relaxed">
+        <p className="text-muted-foreground text-base leading-relaxed">
           AI가 이미 우리 삶에 깊이 자리 잡았지만, 혼자서 빠르게 변화하는 기술을 따라가기란 쉽지 않습니다.
           <br />
-          <strong className="text-black">Early Developer Club</strong>은 새로운 기술을 함께 즐겁게 경험하고 삶에 적용하고 싶은 모임이에요.
+          <strong className="text-foreground">Early Developer Club</strong>은 새로운 기술을 함께 즐겁게 경험하고 삶에 적용하고 싶은 모임이에요.
           <br />
           개발자뿐만 아니라 자신의 분야에 기술을 도입하고 싶은 모든 분을 환영해요.
         </p>
@@ -70,7 +70,7 @@ export function ActivitiesGrid() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="rounded-md border border-gray-200 bg-white text-black p-6 shadow-sm hover:shadow-md transition-all duration-300"
+            className="rounded-md border border-border bg-background text-foreground p-6 shadow-sm hover:shadow-md transition-all duration-300"
           >
             <div className="font-mono text-sm text-lime-500"># {activity.id}</div>
             <div className="mt-2 font-bold text-lg">{activity.title}</div>

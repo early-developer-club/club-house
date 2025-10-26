@@ -11,10 +11,10 @@ export function MailAlarm() {
       className="mt-20"
     >
       <div className="text-center mb-8">
-        <h2 className="text-xl font-bold text-black mb-6">
+        <h2 className="text-xl font-bold text-foreground mb-6">
           메일 알람 신청
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
           새로운 활동과 소식을 가장 먼저 받아보세요!
           <br />
           Google Forms를 통해 간편하게 신청할 수 있습니다.
@@ -23,7 +23,7 @@ export function MailAlarm() {
           href="https://forms.gle/MxRLVtBv7QamajZR9"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-8 py-4 bg-lime-500 text-white font-semibold rounded-lg hover:bg-lime-600 transition-colors shadow-sm hover:shadow-md"
+          className="inline-flex items-center px-8 py-4 bg-brand-primary text-background font-semibold rounded-lg hover:bg-brand-primary-dark transition-colors shadow-sm hover:shadow-md"
         >
           <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -31,7 +31,7 @@ export function MailAlarm() {
           </svg>
           Google Forms로 신청하기
         </a>
-        <p className="text-xs text-gray-500 mt-3">
+        <p className="text-xs text-muted-foreground mt-3">
           * Google Forms로 이동하여 간편하게 신청하실 수 있습니다
         </p>
       </div>

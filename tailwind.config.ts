@@ -28,6 +28,13 @@ const config: Config = {
         'mono': ['var(--font-geist-mono)', 'monospace'],
       },
       colors: {
+        // 브랜드 컬러
+        brand: {
+          primary: "var(--brand-primary)",
+          "primary-dark": "var(--brand-primary-dark)",
+          "primary-light": "var(--brand-primary-light)",
+        },
+        // 기본 컬러
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
@@ -46,10 +53,16 @@ const config: Config = {
           DEFAULT: "var(--accent)",
           foreground: "var(--accent-foreground)",
         },
+        // 상태 컬러
+        success: "var(--success)",
+        warning: "var(--warning)",
+        error: "var(--error)",
+        info: "var(--info)",
         destructive: {
           DEFAULT: "var(--destructive)",
           foreground: "var(--destructive-foreground)",
         },
+        // UI 컬러
         border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",

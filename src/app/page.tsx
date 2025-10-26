@@ -49,7 +49,7 @@ export default function HomePage() {
     .slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         <HeroSection ref={heroRef} />
         
@@ -62,7 +62,7 @@ export default function HomePage() {
           className="mb-20"
         >
           <div className="flex flex-col items-center justify-between mb-8">
-            <h2 className="text-6xl text-center text-black font-bitcount">Early Developer Club</h2>
+            <h2 className="text-6xl text-center text-foreground font-bitcount">Early Developer Club</h2>
             <Link href="/archive?filter=developer" className="font-medium">
               더보기 →
             </Link>
@@ -81,11 +81,11 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
-                    <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
+                        <span key={idx} className="px-2 py-1 bg-info/10 text-info text-xs rounded-full">
                           {tech}
                         </span>
                       ))}
@@ -105,7 +105,7 @@ export default function HomePage() {
           className="mb-20"
         >
           <div className="flex flex-col items-start mb-8">
-            <h2 className="text-6xl font-light text-black font-bitcount">
+            <h2 className="text-6xl font-light text-foreground font-bitcount">
               Early<br/>
               Artist<br/>
               Club
@@ -115,9 +115,9 @@ export default function HomePage() {
                </Link>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-xl font-bold text-black mb-2">지능의 파동</h3>
-            <p className="text-sm text-gray-600 mb-4">prompter A</p>
-               <div className="text-sm text-gray-700 leading-relaxed text-center max-w-70 break-keep">
+            <h3 className="text-xl font-bold text-foreground mb-2">지능의 파동</h3>
+            <p className="text-sm text-muted-foreground mb-4">prompter A</p>
+               <div className="text-sm text-muted-foreground leading-relaxed text-center max-w-70 break-keep">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -149,7 +149,7 @@ export default function HomePage() {
           className="mb-20"
         >
           <div className="flex flex-col items-end">
-            <h2 className="text-6xl text-right font-bold text-black font-bitcount">
+            <h2 className="text-6xl text-right font-bold text-foreground font-bitcount">
               Early<br/>
               Designer<br/>
               Club

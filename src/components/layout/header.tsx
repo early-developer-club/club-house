@@ -17,10 +17,10 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full bg-white"
+      className="sticky top-0 z-50 w-full bg-background"
     >
       <div className="flex px-4 items-center justify-between h-16 max-w-7xl mx-auto">
-        <Link href="/" className="hover:text-gray-600 transition-colors">
+        <Link href="/" className="hover:text-muted-foreground transition-colors">
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
@@ -29,10 +29,10 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-lime-500",
+                "text-sm font-medium transition-colors hover:text-brand-primary",
                 isActive(item.href) 
-                  ? "text-lime-500" 
-                  : "text-gray-600"
+                  ? "text-brand-primary" 
+                  : "text-muted-foreground"
               )}
             >
               {item.title}
@@ -40,7 +40,7 @@ export function Header() {
           ))}
         </nav>
         <div className="md:hidden">
-          <button className="text-gray-600">
+          <button className="text-muted-foreground">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

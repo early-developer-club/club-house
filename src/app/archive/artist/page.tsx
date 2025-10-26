@@ -29,7 +29,7 @@ export default function ArtistArchivePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         {/* 헤더 */}
         <motion.div
@@ -38,10 +38,10 @@ export default function ArtistArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl lg:text-6xl font-bold text-black font-bitcount mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
             Early Artist Club
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             AI와 함께 창작한 시와 문학 작품들을 감상해보세요
           </p>
         </motion.div>
@@ -58,12 +58,12 @@ export default function ArtistArchivePage() {
                 className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-6 border border-pink-100 hover:shadow-lg transition-all duration-300"
               >
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold text-black mb-2">{poem.title}</h3>
-                  <p className="text-sm text-gray-600 mb-2">작가: {poem.author}</p>
-                  <p className="text-xs text-gray-500">{poem.date}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{poem.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-2">작가: {poem.author}</p>
+                  <p className="text-xs text-muted-foreground">{poem.date}</p>
                 </div>
-                <div className="bg-white rounded-lg p-4 border border-pink-200">
-                  <pre className="text-sm text-gray-700 whitespace-pre-wrap font-mono leading-relaxed">
+                <div className="bg-background rounded-lg p-4 border border-border">
+                  <pre className="text-sm text-muted-foreground whitespace-pre-wrap font-mono leading-relaxed">
                     {poem.content}
                   </pre>
                 </div>

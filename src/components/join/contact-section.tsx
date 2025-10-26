@@ -1,26 +1,26 @@
 export function ContactSection() {
   return (
     <section className="mt-20">
-      <h2 className="text-xl font-bold text-black text-center mb-6">Contact</h2>
+      <h2 className="text-xl font-bold text-foreground text-center mb-6">Contact</h2>
 
       <div className="max-w-2xl mx-auto text-center space-y-6">
         <div>
-          <h3 className="text-lg font-semibold text-black">Email</h3>
+          <h3 className="text-lg font-semibold text-foreground">Email</h3>
           <a 
             href="mailto:contact@earlydevclub.com"
-            className="text-lime-600 hover:text-lime-700"
+            className="text-brand-primary hover:text-brand-primary-dark"
           >
             talown@naver.com
           </a>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold text-black">GitHub</h3>
+          <h3 className="text-lg font-semibold text-foreground">GitHub</h3>
           <a 
             href="https://github.com/early-developer-club"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lime-600 hover:text-lime-700"
+            className="text-brand-primary hover:text-brand-primary-dark"
           >
             github.com/early-developer-club
           </a>
@@ -32,7 +32,7 @@ export function ContactSection() {
             href="https://discord.gg/your-discord-link"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lime-600 hover:text-lime-700"
+            className="text-brand-primary hover:text-brand-primary-dark"
           >
             Early Developer Club
           </a>
@@ -40,9 +40,9 @@ export function ContactSection() {
       </div>
       
       <div className="mt-20 text-center">
-        <div className="bg-gray-50 rounded-lg p-6 max-w-2xl mx-auto">
-          <h3 className="text-lg font-semibold text-black mb-6">운영진 모집</h3>
-          <p className="text-gray-600 text-sm">
+        <div className="bg-muted rounded-lg p-6 max-w-2xl mx-auto">
+          <h3 className="text-lg font-semibold text-foreground mb-6">운영진 모집</h3>
+          <p className="text-muted-foreground text-sm">
             분야 관계없이 AI를 활용한 다양한 활동을 진행해보고 싶거나, 
             <br />
             커뮤니티에 기여하고 싶은 분들의 참여를 기다립니다.

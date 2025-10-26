@@ -7,7 +7,7 @@ import { RecentNotices } from "@/components/join/recent-notices"
 
 export default function JoinPage() {
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         <JoinHero />
         <RecentNotices />

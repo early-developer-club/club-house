@@ -44,7 +44,7 @@ export default function ArchivePage() {
   const filteredBlogs = activeFilter === "all" ? blogs : blogs.filter(blog => blog.category === activeFilter)
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         {/* Header */}
         <motion.div
@@ -53,10 +53,10 @@ export default function ArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl lg:text-6xl font-bold text-black font-bitcount mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
             Archive
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Early AI Club의 모든 활동과 결과물을 확인해보세요
           </p>
         </motion.div>
@@ -68,15 +68,15 @@ export default function ArchivePage() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex justify-center mb-12"
         >
-          <div className="flex gap-2 p-1 bg-gray-100 rounded-lg">
+          <div className="flex gap-2 p-1 bg-muted rounded-lg">
             {filters.map((filter) => (
               <button
                 key={filter.key}
                 onClick={() => handleFilterChange(filter.key)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   activeFilter === filter.key
-                    ? "bg-white text-black shadow-sm"
-                    : "text-gray-600 hover:text-black"
+                    ? "bg-background text-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {filter.label}

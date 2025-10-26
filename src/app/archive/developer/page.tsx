@@ -35,7 +35,7 @@ export default function DeveloperArchivePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full px-4 py-4">
         {/* 헤더 */}
         <motion.div
@@ -44,10 +44,10 @@ export default function DeveloperArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl lg:text-6xl font-bold text-black font-bitcount mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
             Early Developer Club
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             AI와 함께 개발한 다양한 프로젝트들을 확인해보세요
           </p>
         </motion.div>
@@ -72,14 +72,14 @@ export default function DeveloperArchivePage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-black mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
                   
                   {/* 기술 스택 */}
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
+                        <span key={idx} className="px-2 py-1 bg-info/10 text-info text-xs rounded-full">
                           {tech}
                         </span>
                       ))}
@@ -92,7 +92,7 @@ export default function DeveloperArchivePage() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-gray-800 text-white text-center py-2 px-4 rounded-lg hover:bg-gray-900 transition-colors text-sm"
+                      className="flex-1 bg-muted text-foreground text-center py-2 px-4 rounded-lg hover:bg-muted/80 transition-colors text-sm"
                     >
                       GitHub
                     </a>
@@ -100,7 +100,7 @@ export default function DeveloperArchivePage() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-blue-500 text-white text-center py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors text-sm"
+                      className="flex-1 bg-brand-primary text-background text-center py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm"
                     >
                       Demo
                     </a>

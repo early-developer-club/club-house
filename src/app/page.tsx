@@ -32,17 +32,6 @@ export default function HomePage() {
     }
   ]
 
-
-  const designerProjects = [
-    {
-      id: 1,
-      title: "AI 아트 컬렉션",
-      description: "Midjourney와 DALL-E를 활용한 디지털 아트 작품들",
-      type: "디지털 아트",
-      tools: ["Midjourney", "DALL-E", "Photoshop"]
-    }
-  ]
-
   // archive.ts에서 최신 3개 블로그 가져오기
   const reviews = blogs
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -68,7 +57,7 @@ export default function HomePage() {
             </Link>
           </div>
             <div className="grid gap-6 md:grid-cols-2">
-              {developerProjects.map((project, index) => (
+              {developerProjects.map((project) => (
                 <div key={project.id} className="border overflow-hidden">
                   <div className="relative">
                     <img 

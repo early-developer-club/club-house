@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import { projects, blogs } from "@/data/archive"
 import { notices } from "@/data/notices"
@@ -9,7 +9,7 @@ import { BlogItem } from "@/components/ui/blog-item"
 
 type FilterType = "all" | "developer" | "artist" | "designer"
 
-export default function ArchivePage() {
+function ArchiveContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const [activeFilter, setActiveFilter] = useState<FilterType>("all")
@@ -189,5 +189,13 @@ export default function ArchivePage() {
         </motion.section>
       </div>
     </div>
+  )
+}
+
+export default function ArchivePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ArchiveContent />
+    </Suspense>
   )
 }

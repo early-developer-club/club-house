@@ -1,7 +1,3 @@
-interface LogoProps {
-  className?: string
-}
-
 export function Logo() {
   return (
     <span className={`text-2xl text-black font-bitcount`}>

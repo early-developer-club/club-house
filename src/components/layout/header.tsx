@@ -25,7 +25,7 @@ export function Header() {
       transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
     >
-      <div className="flex px-4 items-center justify-between h-16 max-w-7xl mx-auto">
+      <div className="flex px-4 items-center justify-between h-16">
         <Link href="/" className="hover:text-muted-foreground transition-colors">
           <Logo />
         </Link>

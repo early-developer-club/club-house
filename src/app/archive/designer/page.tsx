@@ -78,7 +78,7 @@ export default function DesignerArchivePage() {
                 </div>
                 <div className="p-6">
                   <div className="mb-3">
-                    <span className="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full font-medium">
+                    <span className="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs rounded-full font-medium">
                       {design.type}
                     </span>
                   </div>

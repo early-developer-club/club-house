@@ -53,7 +53,7 @@ export default function ArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
+          <h1 className="text-4xl lg:text-6xl text-foreground font-bitcount mb-6">
             Archive
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -75,8 +75,8 @@ export default function ArchivePage() {
                 onClick={() => handleFilterChange(filter.key)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   activeFilter === filter.key
-                    ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-white text-brand-primary shadow-md font-bold"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
                 {filter.label}
@@ -95,15 +95,15 @@ export default function ArchivePage() {
           <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Notice</h2>
           <div className="space-y-4">
             {filteredNotices.map((notice) => (
-              <div key={notice.id} className="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+              <div key={notice.id} className="p-4 border rounded-lg hover:bg-muted transition-colors">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-lg">{notice.title}</h3>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm text-muted-foreground">
                     {notice.startDate} {notice.endDate && `~ ${notice.endDate}`}
                   </span>
                 </div>
-                <p className="text-gray-600">{notice.content}</p>
-                <span className="inline-block mt-2 px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                <p className="text-muted-foreground">{notice.content}</p>
+                <span className="inline-block mt-2 px-2 py-1 bg-muted text-muted-foreground text-xs rounded">
                   {notice.category}
                 </span>
               </div>
@@ -138,11 +138,11 @@ export default function ArchivePage() {
                 )}
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
+                  <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
                   {project.tech && (
                     <div className="flex flex-wrap gap-2 mb-2">
                       {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">
+                        <span key={idx} className="px-2 py-1 bg-info/10 text-info text-xs rounded-full">
                           {tech}
                         </span>
                       ))}

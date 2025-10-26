@@ -3,14 +3,20 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { mainNav } from "@/config/navigation"
 import { Logo } from "@/components/ui/logo"
 
 export function Header() {
   const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
 
-  const isActive = (href: string) => pathname === href
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const isActive = (href: string) => mounted && pathname === href
 
   return (
     <motion.header

@@ -72,10 +72,10 @@ export function ActivitiesGrid() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="rounded-md border border-border bg-background text-foreground p-6 shadow-sm hover:shadow-md transition-all duration-300"
           >
-            <div className="font-mono text-sm text-lime-500"># {activity.id}</div>
+            <div className="font-mono text-sm text-brand-primary"># {activity.id}</div>
             <div className="mt-2 font-bold text-lg">{activity.title}</div>
-            <div className="mt-2 text-sm text-gray-600">{activity.description}</div>
-            <div className="mt-2 text-xs text-gray-500 font-mono">{activity.date}</div>
+            <div className="mt-2 text-sm text-muted-foreground">{activity.description}</div>
+            <div className="mt-2 text-xs text-muted-foreground font-mono">{activity.date}</div>
           </motion.div>
         ))}
       </div>

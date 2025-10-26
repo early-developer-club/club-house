@@ -122,6 +122,40 @@ body {
   background: var(--foreground);
 }
 
+/* bg-muted 클래스 직접 정의 */
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+.hover\:bg-muted:hover {
+  background-color: var(--muted);
+}
+
+/* 브랜드 컬러 클래스 직접 정의 */
+.bg-brand-primary {
+  background-color: var(--brand-primary);
+}
+
+.text-brand-primary {
+  color: var(--brand-primary);
+}
+
+.hover\:bg-brand-primary:hover {
+  background-color: var(--brand-primary);
+}
+
+.hover\:bg-brand-primary-dark:hover {
+  background-color: var(--brand-primary-dark);
+}
+
+.hover\:text-brand-primary:hover {
+  color: var(--brand-primary);
+}
+
 /* 폰트 weight 애니메이션 */
 @keyframes fontWeightPulse {
   0% {

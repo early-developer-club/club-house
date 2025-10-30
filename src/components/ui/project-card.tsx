@@ -19,7 +19,7 @@ export function ProjectCard({ project, showCategory = true }: ProjectCardProps) 
   })()
 
   return (
-    <div className="relative border overflow-hidden group">
+    <div className="relative w-full border overflow-hidden group">
       {defaultLink && (
         <Link
           href={defaultLink.href}

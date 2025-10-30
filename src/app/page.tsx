@@ -4,44 +4,46 @@ import { HeroSection } from "@/components/home/hero-section"
 import { FollowingRocket } from "@/components/home/following-rocket"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef, useEffect, useState, useMemo } from "react"
 import { blogs } from "@/data/blogs"
 import { BlogItem } from "@/components/ui/blog-item"
 import { ProjectCard } from "@/components/ui/project-card"
-import type { Project } from "@/data/projects"
+import { projects as allProjects } from "@/data/projects"
 
 export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null)
   const artistSectionRef = useRef<HTMLDivElement>(null)
   const isArtistSectionInView = useInView(artistSectionRef, { once: true })
 
-  const developerProjects: Project[] = [
-    {
-      id: 1,
-      title: "AI 코딩 어시스턴트",
-      category: "developer",
-      description: "VDD 스터디에서 개발한 AI와 함께하는 코딩 도구",
-      tech: ["React", "OpenAI API", "TypeScript"],
-      vibeTime: "25분",
-      thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
-      links: [
-        { type: "primary", href: "https://example.com/ai-coding-assistant", label: "Demo" },
-        { type: "github", href: "https://github.com/early-developer-club/ai-coding-assistant" }
-      ]
-    },
-    {
-      id: 2,
-      title: "바이브 코딩 플랫폼",
-      category: "developer",
-      description: "음악에 맞춰 코딩하는 새로운 개발 경험을 제공하는 플랫폼",
-      tech: ["Next.js", "Web Audio API", "Tailwind CSS"],
-      vibeTime: "18분",
-      thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
-      links: [
-        { type: "primary", href: "https://example.com/vibe-coding", label: "Live" }
-      ]
+  // data에서 개발 카테고리만 사용 (정적 데이터이므로 메모이제이션)
+  const developerProjects = useMemo(
+    () => allProjects.filter(p => p.category === "developer"),
+    []
+  )
+
+  // 최초 1회: 최대 4개를 랜덤 선택하여 고정
+  const [selectedProjects, setSelectedProjects] = useState<typeof developerProjects>([])
+  const [visibleProjects, setVisibleProjects] = useState<typeof developerProjects>([])
+
+  useEffect(() => {
+    const shuffled = [...developerProjects].sort(() => Math.random() - 0.5)
+    const picked = shuffled.slice(0, Math.min(4, shuffled.length))
+    setSelectedProjects(picked)
+    const isWide = window.matchMedia("(min-width: 1024px)").matches
+    setVisibleProjects(isWide ? picked : picked.slice(0, 2))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // 리사이즈 시: 이미 선택된 4개를 기준으로 2개/4개만 토글, 재랜덤 금지
+  useEffect(() => {
+    const onResize = () => {
+      if (selectedProjects.length === 0) return
+      const isWide = window.matchMedia("(min-width: 1024px)").matches
+      setVisibleProjects(isWide ? selectedProjects : selectedProjects.slice(0, 2))
     }
-  ]
+    window.addEventListener("resize", onResize)
+    return () => window.removeEventListener("resize", onResize)
+  }, [selectedProjects])
 
   // archive.ts에서 최신 3개 블로그 가져오기
   const reviews = blogs
@@ -67,8 +69,8 @@ export default function HomePage() {
               더보기 →
             </Link>
           </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {developerProjects.map((project) => (
+            <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
+              {visibleProjects.map((project) => (
                 <ProjectCard key={project.id} project={project} showCategory={false} />
               ))}
             </div>

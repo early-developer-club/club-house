@@ -1,5 +1,6 @@
 import { Project } from "@/data/projects"
 import Link from "next/link"
+import { Logo } from "@/components/ui/logo"
 
 interface ProjectCardProps {
   project: Project
@@ -7,48 +8,73 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, showCategory = true }: ProjectCardProps) {
-  const primaryLink = project.links?.find((l) => l.type === "primary")
+  const defaultLink = (() => {
+    if (!Array.isArray(project.links) || project.links.length === 0) return undefined
+    const priority = ["primary", "github", "docs", "post"] as const
+    for (const p of priority) {
+      const found = project.links.find((l) => l.type === p)
+      if (found) return found
+    }
+    return project.links[0]
+  })()
 
   return (
     <div className="relative border overflow-hidden group">
-      {primaryLink && (
+      {defaultLink && (
         <Link
-          href={primaryLink.href}
+          href={defaultLink.href}
           className="absolute inset-0 z-10"
           aria-label={`${project.title} 열기`}
-          target={primaryLink.href.startsWith("http") ? "_blank" : undefined}
-          rel={primaryLink.href.startsWith("http") ? "noreferrer" : undefined}
+          target={defaultLink.href.startsWith("http") ? "_blank" : undefined}
+          rel={defaultLink.href.startsWith("http") ? "noreferrer" : undefined}
         />
       )}
-      {project.thumbnail && (
-        <div className="relative overflow-hidden">
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-48 object-cover transition-transform duration-300 ease-out group-hover:scale-105 will-change-transform"
-          />
-          {project.vibeTime && (
-            <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs font-medium">
-              {project.vibeTime}
+      <div className="relative overflow-hidden group">
+        <div className="transition-transform duration-300 ease-out group-hover:scale-105 will-change-transform origin-center">
+          {project.thumbnail ? (
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="block w-full h-48 object-cover"
+            />
+          ) : (
+            <div className="w-full h-48 bg-muted flex items-center justify-center select-none">
+              <Logo />
             </div>
           )}
         </div>
-      )}
+        {(showCategory || project.vibeTime) && (
+          <div className="absolute top-2 right-2 z-20 flex flex-row items-center gap-1.5">
+            {showCategory && (
+              <span className="inline-flex items-center h-5 px-2 rounded bg-gray-100 text-gray-700 text-[10px]">
+                {project.category}
+              </span>
+            )}
+            {project.vibeTime && (
+              <span className="inline-flex items-center h-5 px-2 rounded bg-black/70 text-white text-[10px] font-medium">
+                {project.vibeTime}
+              </span>
+            )}
+          </div>
+        )}
+      </div>
       <div className="relative z-20 p-2.5">
-        <h3 className="text-base font-bold text-foreground mb-0.5">
-          {primaryLink ? (
-            <Link
-              href={primaryLink.href}
-              className="hover:underline"
-              target={primaryLink.href.startsWith("http") ? "_blank" : undefined}
-              rel={primaryLink.href.startsWith("http") ? "noreferrer" : undefined}
-            >
-              {project.title}
-            </Link>
-          ) : (
-            project.title
-          )}
-        </h3>
+        <div className="mb-0.5">
+          <h3 className="text-base font-bold text-foreground">
+            {defaultLink ? (
+              <Link
+                href={defaultLink.href}
+                className="hover:underline"
+                target={defaultLink.href.startsWith("http") ? "_blank" : undefined}
+                rel={defaultLink.href.startsWith("http") ? "noreferrer" : undefined}
+              >
+                {project.title}
+              </Link>
+            ) : (
+              project.title
+            )}
+          </h3>
+        </div>
         <p className="text-muted-foreground mb-1.5 text-[12px]">{project.description}</p>
 
         {project.tech && (
@@ -71,11 +97,7 @@ export function ProjectCard({ project, showCategory = true }: ProjectCardProps) 
           </div>
         )}
 
-        {showCategory && (
-          <span className="inline-block px-1.5 py-0.5 bg-gray-100 text-gray-600 text-[10px] rounded">
-            {project.category}
-          </span>
-        )}
+        {/* category badge moved next to title */}
 
         {project.links && project.links.length > 0 && (
           <div className="mt-2 flex flex-wrap gap-1.5">

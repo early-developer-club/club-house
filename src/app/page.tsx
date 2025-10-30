@@ -5,30 +5,41 @@ import { FollowingRocket } from "@/components/home/following-rocket"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
 import { useRef } from "react"
-import { blogs } from "@/data/archive"
+import { blogs } from "@/data/blogs"
 import { BlogItem } from "@/components/ui/blog-item"
+import { ProjectCard } from "@/components/ui/project-card"
+import type { Project } from "@/data/projects"
 
 export default function HomePage() {
   const heroRef = useRef<HTMLElement>(null)
   const artistSectionRef = useRef<HTMLDivElement>(null)
   const isArtistSectionInView = useInView(artistSectionRef, { once: true })
 
-  const developerProjects = [
+  const developerProjects: Project[] = [
     {
       id: 1,
       title: "AI 코딩 어시스턴트",
+      category: "developer",
       description: "VDD 스터디에서 개발한 AI와 함께하는 코딩 도구",
       tech: ["React", "OpenAI API", "TypeScript"],
       vibeTime: "25분",
-      thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop"
+      thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+      links: [
+        { type: "primary", href: "https://example.com/ai-coding-assistant", label: "Demo" },
+        { type: "github", href: "https://github.com/early-developer-club/ai-coding-assistant" }
+      ]
     },
     {
       id: 2,
       title: "바이브 코딩 플랫폼",
+      category: "developer",
       description: "음악에 맞춰 코딩하는 새로운 개발 경험을 제공하는 플랫폼",
       tech: ["Next.js", "Web Audio API", "Tailwind CSS"],
       vibeTime: "18분",
-      thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop"
+      thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
+      links: [
+        { type: "primary", href: "https://example.com/vibe-coding", label: "Live" }
+      ]
     }
   ]
 
@@ -58,29 +69,7 @@ export default function HomePage() {
           </div>
             <div className="grid gap-6 md:grid-cols-2">
               {developerProjects.map((project) => (
-                <div key={project.id} className="border overflow-hidden">
-                  <div className="relative">
-                    <img 
-                      src={project.thumbnail} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs font-medium">
-                      {project.vibeTime}
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold text-foreground mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-info/10 text-info text-xs rounded-full">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <ProjectCard key={project.id} project={project} showCategory={false} />
               ))}
             </div>
         </motion.section>

@@ -3,9 +3,11 @@
 import { motion } from "framer-motion"
 import { useState, useEffect, Suspense } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
-import { projects, blogs } from "@/data/archive"
+import { projects } from "@/data/projects"
+import { blogs } from "@/data/blogs"
 import { notices } from "@/data/notices"
 import { BlogItem } from "@/components/ui/blog-item"
+import { ProjectCard } from "@/components/ui/project-card"
 
 type FilterType = "all" | "developer" | "artist" | "designer"
 
@@ -121,47 +123,7 @@ function ArchiveContent() {
           <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Projects</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="border overflow-hidden">
-                {project.thumbnail && (
-                  <div className="relative">
-                    <img 
-                      src={project.thumbnail} 
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    {project.vibeTime && (
-                      <div className="absolute top-2 right-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs font-medium">
-                        {project.vibeTime}
-                      </div>
-                    )}
-                  </div>
-                )}
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-black mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
-                  {project.tech && (
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {project.tech.map((tech, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-info/10 text-info text-xs rounded-full">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  {project.tools && (
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {project.tools.map((tool, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <span className="inline-block px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
-                    {project.category}
-                  </span>
-                </div>
-              </div>
+              <ProjectCard key={project.id} project={project} showCategory={true} />
             ))}
           </div>
         </motion.section>

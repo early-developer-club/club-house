@@ -96,7 +96,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-bold text-foreground mb-2">지능의 파동</h3>
-            <p className="text-sm text-muted-foreground mb-4">prompter A</p>
+            <p className="text-sm text-muted-foreground mb-4">prompter da-in</p>
                <div className="text-sm text-muted-foreground leading-relaxed text-center max-w-70 break-keep">
                 <motion.div
                   initial={{ opacity: 0 }}

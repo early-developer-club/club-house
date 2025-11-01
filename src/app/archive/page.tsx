@@ -138,14 +138,7 @@ function ArchiveContent() {
           <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Blogs</h2>
           <div className="space-y-2">
             {filteredBlogs.map((blog) => (
-              <BlogItem
-                key={blog.id}
-                title={blog.title}
-                excerpt={blog.excerpt}
-                author={blog.author}
-                date={blog.date}
-                category={blog.category}
-              />
+              <BlogItem key={blog.id} blog={blog} />
             ))}
           </div>
         </motion.section>

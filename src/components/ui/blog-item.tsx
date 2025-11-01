@@ -1,29 +1,33 @@
+import Link from "next/link"
+import type { Blog } from "@/data/blogs"
+
 interface BlogItemProps {
-  title: string
-  excerpt: string
-  author: string
-  date: string
-  category?: string
+  blog: Blog
   className?: string
 }
 
-export function BlogItem({ title, excerpt, author, date, category, className = "" }: BlogItemProps) {
+export function BlogItem({ blog, className = "" }: BlogItemProps) {
   return (
-    <div className={`p-4 border ${className}`}>
-      <h3 className="font-bold">{title}</h3>
-      <p className="text-muted-foreground truncate">{excerpt}</p>
+    <Link
+      href={blog.href}
+      className={`block p-4 border ${className} hover:bg-muted/50 transition-colors`}
+      target={blog.href.startsWith("http") ? "_blank" : undefined}
+      rel={blog.href.startsWith("http") ? "noreferrer" : undefined}
+    >
+      <h3 className="font-bold">{blog.title}</h3>
+      <p className="text-muted-foreground truncate">{blog.excerpt}</p>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1 text-muted-foreground">
-          <span>{author}</span>
+          <span>{blog.author}</span>
           <span>•</span>
-          <span>{date}</span>
+          <span>{blog.date}</span>
         </div>
-        {category && (
+        {blog.category && (
           <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">
-            {category}
+            {blog.category}
           </span>
         )}
       </div>
-    </div>
+    </Link>
   )
 }

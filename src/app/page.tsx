@@ -158,13 +158,7 @@ export default function HomePage() {
           </div>
           <div className="space-y-2">
             {reviews.map((review) => (
-              <BlogItem
-                key={review.id}
-                title={review.title}
-                excerpt={review.excerpt}
-                author={review.author}
-                date={review.date}
-              />
+              <BlogItem key={review.id} blog={review} />
             ))}
           </div>
         </motion.section>

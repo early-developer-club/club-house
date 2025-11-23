@@ -3,167 +3,113 @@ import { Member } from "@/types/member"
 export const members: Member[] = [
   {
     id: "1",
-    name: "dain",
+    name: "최다인(da-in)",
     role: "Frontend Developer",
-    bio: "React와 Next.js를 주로 사용하는 프론트엔드 개발자입니다. AI 도구를 활용한 개발에 관심이 많습니다.",
-    avatar: "A",
-    profileImage: "1.webp",
+    bio: "운동하는 개발자입니다.",
+    profileImage: "1.png",
     links: {
       github: "https://github.com/da-in",
       blog: "https://da-in.github.io",
-      email: "dain@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-01"
+      email: "talown@naver.com"
+    }
   },
   {
     id: "2",
-    name: "참여자 2",
-    role: "Backend Developer",
-    bio: "Node.js와 Python을 사용하는 백엔드 개발자입니다. AI와 함께하는 개발에 도전하고 있습니다.",
-    avatar: "B",
+    name: "이도하(Lee-DoHa)",
+    role: "Backend Developer(AI, Search)",
+    bio: "T1과 밴드를 좋아하는 검색 개발자입니다.",
+    profileImage: "2.webp",
     links: {
-      github: "https://github.com/participant2",
-      email: "participant2@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-05"
+      linkedin: "https://www.linkedin.com/in/도하-이-607a37259",
+    }
   },
   {
     id: "3",
-    name: "참여자 3",
-    role: "Full Stack Developer",
-    bio: "풀스택 개발자로 다양한 기술 스택을 다룹니다. 새로운 기술 학습에 열정적입니다.",
-    avatar: "C",
+    name: "이세명(3people)",
+    role: "Frontend Developer",
+    bio: "운동과 게임을 좋아하는 사람",
+    profileImage: "3.webp",
     links: {
-      github: "https://github.com/participant3",
-      linkedin: "https://linkedin.com/in/participant3",
-      email: "participant3@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-08"
+      github: "https://github.com/3people",
+    }
   },
   {
     id: "4",
-    name: "참여자 4",
-    role: "UI/UX Designer",
-    bio: "사용자 경험을 중시하는 디자이너입니다. 개발과 디자인의 경계에서 일하는 것을 좋아합니다.",
-    avatar: "D",
+    name: "안성진(anveloper)",
+    role: "Full-stack Developer",
+    bio: "커머스 솔루션 개발",
+    profileImage: "4.png",
     links: {
-      linkedin: "https://linkedin.com/in/participant4",
-      blog: "https://participant4.design",
-      email: "participant4@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-10"
+      linkedin: "https://www.linkedin.com/in/anveloper/",
+    }
   },
   {
     id: "5",
-    name: "참여자 5",
-    role: "DevOps Engineer",
-    bio: "인프라와 배포 자동화에 전문성을 가진 엔지니어입니다. 클라우드 기술에 관심이 많습니다.",
-    avatar: "E",
+    name: "함인규(HamInKyou)",
+    role: "Frontend Developer",
+    bio: "수영을 취미로 하는 개발자 ㅎ",
+    profileImage: "5.webp",
     links: {
-      github: "https://github.com/participant5",
-      email: "participant5@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-12"
+      github: "https://github.com/HamInKyou",
+    }
   },
   {
     id: "6",
-    name: "참여자 6",
-    role: "Data Scientist",
-    bio: "데이터 분석과 머신러닝에 전문성을 가진 데이터 사이언티스트입니다.",
-    avatar: "F",
+    name: "서석주(Seokzzoo)",
+    role: "Backend Developer",
+    bio: "굼융권에서 개발하고 있습니다~",
+    profileImage: "6.webp",
     links: {
-      github: "https://github.com/participant6",
-      linkedin: "https://linkedin.com/in/participant6",
-      email: "participant6@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-15"
+      github: "https://github.com/Seokzzoo/Seokzzoo",
+    }
   },
   {
     id: "7",
-    name: "참여자 7",
-    role: "Mobile Developer",
-    bio: "React Native와 Flutter를 사용하는 모바일 개발자입니다.",
-    avatar: "G",
+    name: "천진영(jinyoung0711)",
+    role: "Student",
+    bio: "집에 있는걸 좋아하는 학생입니다.",
+    profileImage: "7.webp",
     links: {
-      github: "https://github.com/participant7",
-      email: "participant7@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-18"
+      github: "https://github.com/jinyoung0711",
+    }
   },
   {
     id: "8",
-    name: "참여자 8",
-    role: "Product Manager",
-    bio: "기술과 비즈니스를 연결하는 프로덕트 매니저입니다.",
-    avatar: "H",
+    name: "이종훈(jonghunlee98)",
+    role: "Smart factory engineer",
+    bio: "광양 이처진지 공장 설계자입니다.",
+    profileImage: "8.webp",
     links: {
-      linkedin: "https://linkedin.com/in/participant8",
-      email: "participant8@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-20"
+      github: "http://github.com/jh-lee",
+    }
   },
   {
     id: "9",
-    name: "참여자 9",
-    role: "QA Engineer",
-    bio: "품질 보증과 테스트 자동화에 전문성을 가진 엔지니어입니다.",
-    avatar: "I",
+    name: "박정근(JGeun)",
+    role: "Android Developer",
+    bio: "네트워킹을 좋아하는 개발자입니다.",
+    profileImage: "9.png",
     links: {
-      github: "https://github.com/participant9",
-      email: "participant9@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-22"
+      github: "https://github.com/JGeun",
+    }
   },
   {
     id: "10",
-    name: "참여자 10",
-    role: "Security Engineer",
-    bio: "보안과 암호화에 전문성을 가진 엔지니어입니다.",
-    avatar: "J",
-    links: {
-      github: "https://github.com/participant10",
-      linkedin: "https://linkedin.com/in/participant10",
-      email: "participant10@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-25"
+    name: "이규현(DiamondMonkeyCAt)",
+    role: "Backend Developer",
+    profileImage: "10.png",
   },
   {
     id: "11",
-    name: "참여자 11",
-    role: "Tech Lead",
-    bio: "기술 리더로서 팀의 기술적 방향을 이끌고 있습니다.",
-    avatar: "K",
-    links: {
-      github: "https://github.com/participant11",
-      linkedin: "https://linkedin.com/in/participant11",
-      blog: "https://participant11.tech",
-      email: "participant11@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-28"
+    name: "여서하(yeoseoha)",
+    role: "Engineer",
+    profileImage: "11.png",
+    bio: "다양한 걸 체험해보고 싶은 여서하입니다.",
   },
   {
     id: "12",
-    name: "참여자 12",
+    name: "김민지(minjikim24)",
     role: "AI Engineer",
-    bio: "인공지능과 머신러닝 모델 개발에 전문성을 가진 엔지니어입니다.",
-    avatar: "L",
-    links: {
-      github: "https://github.com/participant12",
-      linkedin: "https://linkedin.com/in/participant12",
-      email: "participant12@example.com"
-    },
-    activities: ["VDD 스터디"],
-    joinDate: "2024-12-30"
+    profileImage: "12.png",
   }
 ]

@@ -23,7 +23,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
+      className="sticky top-0 z-50 w-full bg-background border-b border-border"
     >
       <div className="flex px-4 items-center justify-between h-16">
         <Link href="/" className="hover:text-muted-foreground transition-colors">
@@ -37,7 +37,7 @@ export function Header() {
               className={cn(
                 "text-sm font-medium transition-colors",
                 item.title === "Join" 
-                  ? "px-4 py-2 rounded-lg shadow-sm text-white transition-colors"
+                  ? "px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors"
                   : cn(
                       "hover:text-brand-primary",
                       isActive(item.href) 

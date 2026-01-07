@@ -77,7 +77,7 @@ function ArchiveContent() {
                 onClick={() => handleFilterChange(filter.key)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   activeFilter === filter.key
-                    ? "bg-white text-brand-primary shadow-md font-bold"
+                    ? "bg-foreground text-background shadow-md font-bold"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
@@ -94,7 +94,7 @@ function ArchiveContent() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Notice</h2>
+          <h2 className="text-2xl font-bold text-foreground font-bitcount mb-8">Notice</h2>
           <div className="space-y-4">
             {filteredNotices.map((notice) => (
               <div key={notice.id} className="p-4 border rounded-lg hover:bg-muted transition-colors">
@@ -120,7 +120,7 @@ function ArchiveContent() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Projects</h2>
+          <h2 className="text-2xl font-bold text-foreground font-bitcount mb-8">Projects</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} showCategory={true} />
@@ -135,7 +135,7 @@ function ArchiveContent() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-black font-bitcount mb-8">Blogs</h2>
+          <h2 className="text-2xl font-bold text-foreground font-bitcount mb-8">Blogs</h2>
           <div className="space-y-2">
             {filteredBlogs.map((blog) => (
               <BlogItem key={blog.id} blog={blog} />

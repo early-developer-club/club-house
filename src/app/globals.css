@@ -2,32 +2,33 @@
 
 :root {
   /* 브랜드 컬러 */
-  --brand-primary: #22c55e;      /* 더 어두운 초록 (흰 글씨 대비 좋음) */
-  --brand-primary-dark: #16a34a; /* 더 어두운 초록 다크 */
-  --brand-primary-light: #4ade80; /* 더 어두운 초록 라이트 */
-  
+  --brand-primary: #bbff00; /* 라임 그린 */
+  --brand-primary-dark: #99cc00; /* 라임 그린 다크 */
+  --brand-primary-light: #ccff33; /* 라임 그린 라이트 */
+  --brand-primary-foreground: #0f172a; /* 브랜드 컬러 배경 위 텍스트 색상 */
+
   /* 기본 컬러 */
-  --background: #ffffff;
-  --foreground: #0f172a;        /* 진한 회색 */
+  --background: #304fec;
+  --foreground: #ffffff; /* 흰색 */
   --primary: var(--brand-primary);
-  --primary-foreground: #ffffff;
+  --primary-foreground: #0f172a; /* 브랜드 컬러 배경 위 텍스트 색상 */
   --secondary: #f1f5f9;
   --secondary-foreground: #0f172a;
-  --muted: #f8fafc;             /* 연한 회색 배경 */
-  --muted-foreground: #64748b;  /* 중간 회색 텍스트 */
-  --accent: #f1f5f9;            /* 액센트 배경 */
+  --muted: #f8fafc; /* 연한 회색 배경 */
+  --muted-foreground: #64748b; /* 중간 회색 텍스트 */
+  --accent: #f1f5f9; /* 액센트 배경 */
   --accent-foreground: #0f172a;
-  
+
   /* 상태 컬러 */
-  --success: #22c55e;           /* 성공 */
-  --warning: #f59e0b;           /* 경고 */
-  --error: #ef4444;             /* 에러 */
-  --info: #3b82f6;              /* 정보 */
+  --success: #bbff00; /* 성공 */
+  --warning: #f59e0b; /* 경고 */
+  --error: #ef4444; /* 에러 */
+  --info: #3b82f6; /* 정보 */
   --destructive: var(--error);
   --destructive-foreground: #ffffff;
-  
+
   /* UI 컬러 */
-  --border: #e2e8f0;            /* 테두리 */
+  --border: #e2e8f0; /* 테두리 */
   --input: #e2e8f0;
   --ring: var(--brand-primary); /* 포커스 링 */
   --radius: 0.5rem;
@@ -110,16 +111,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* bg-muted 클래스 직접 정의 */
@@ -175,5 +176,5 @@ body {
 
 /* Bitcount Grid Single 폰트 클래스 */
 .font-bitcount {
-  font-family: 'Bitcount Grid Single', monospace;
+  font-family: "Bitcount Grid Single", monospace;
 }

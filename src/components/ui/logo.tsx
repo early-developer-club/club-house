@@ -1,7 +1,7 @@
 export function Logo() {
   return (
-    <span className={`text-2xl text-black font-bitcount`}>
-      EDC
+    <span className={`text-2xl text-white font-bitcount`}>
+      Vibe
     </span>
   )
 }

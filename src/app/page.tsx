@@ -1,7 +1,6 @@
 "use client"
 
 import { HeroSection } from "@/components/home/hero-section"
-import { FollowingRocket } from "@/components/home/following-rocket"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
 import { useRef, useEffect, useState, useMemo } from "react"
@@ -163,7 +162,6 @@ export default function HomePage() {
           </div>
         </motion.section>
       </div>
-      <FollowingRocket heroRef={heroRef as React.RefObject<HTMLElement>} />
     </div>
   )
 }

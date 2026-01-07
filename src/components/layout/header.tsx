@@ -42,7 +42,7 @@ export function Header() {
                       "hover:text-brand-primary",
                       isActive(item.href) 
                         ? "text-brand-primary font-semibold" 
-                        : "text-muted-foreground font-medium"
+                        : "text-white/80 font-medium"
                     )
               )}
               style={item.title === "Join" ? {
@@ -65,7 +65,7 @@ export function Header() {
           ))}
         </nav>
         <div className="md:hidden">
-          <button className="text-muted-foreground">
+          <button className="text-white/80">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>

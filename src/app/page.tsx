@@ -64,7 +64,7 @@ export default function HomePage() {
           className="mb-20"
         >
           <div className="flex flex-col items-center justify-between mb-8">
-            <h2 className="text-6xl text-center text-foreground font-bitcount">Early Developer Club</h2>
+            <h2 className="text-6xl text-center text-foreground font-bitcount">Vibe Coding Club</h2>
             <Link href="/archive?filter=developer" className="font-medium">
               더보기 →
             </Link>

@@ -23,7 +23,7 @@ export function MailAlarm() {
           href="https://forms.gle/MxRLVtBv7QamajZR9"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-8 py-4 bg-brand-primary text-background font-semibold rounded-lg hover:bg-brand-primary-dark transition-colors shadow-sm hover:shadow-md"
+          className="inline-flex items-center px-8 py-4 bg-brand-primary text-[#0f172a] font-semibold rounded-lg hover:bg-brand-primary-dark transition-colors shadow-sm hover:shadow-md"
         >
           <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />

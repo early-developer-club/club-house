@@ -34,7 +34,7 @@ export function ContactSection() {
             rel="noopener noreferrer"
             className="text-brand-primary hover:text-brand-primary-dark"
           >
-            Early Developer Club
+            Vibe Coding Club
           </a>
         </div> */}
       </div>

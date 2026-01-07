@@ -36,7 +36,7 @@ export function CurrentActivities() {
           현재 진행 중인 활동
         </h2>
         <p className="text-gray-600">
-          Early Developer Club에서 진행하고 있는 다양한 활동들을 확인해보세요
+          Vibe Coding Club에서 진행하고 있는 다양한 활동들을 확인해보세요
         </p>
       </div>
 

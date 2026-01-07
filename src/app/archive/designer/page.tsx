@@ -96,7 +96,7 @@ export default function DesignerArchivePage() {
                     </div>
                   </div>
 
-                  <button className="w-full bg-brand-primary text-background py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm font-medium">
+                  <button className="w-full bg-brand-primary text-[#0f172a] py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm font-medium">
                     작품 보기
                   </button>
                 </div>

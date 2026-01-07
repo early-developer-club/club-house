@@ -64,7 +64,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Club House",
     category: "developer",
-    description: "Early Developer Club 홈페이지 클럽 하우스 웹 제작",
+    description: "Vibe Coding Club 홈페이지 클럽 하우스 웹 제작",
     tech: ["cursor"],
     vibeTime: "6h",
     thumbnail: "/images/projects/4.png",

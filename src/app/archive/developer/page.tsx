@@ -44,7 +44,7 @@ export default function DeveloperArchivePage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl lg:text-6xl font-bold text-foreground font-bitcount mb-6">
-            Early Developer Club
+            Vibe Coding Club
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             AI와 함께 개발한 다양한 프로젝트들을 확인해보세요
@@ -99,7 +99,7 @@ export default function DeveloperArchivePage() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-brand-primary text-background text-center py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm"
+                      className="flex-1 bg-brand-primary text-[#0f172a] text-center py-2 px-4 rounded-lg hover:bg-brand-primary-dark transition-colors text-sm"
                     >
                       Demo
                     </a>

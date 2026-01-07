@@ -13,9 +13,9 @@ export const HeroSection = forwardRef<HTMLElement>((props, ref) => {
         transition={{ duration: 0.2 }}
         className="space-y-6"
       >
-        <div className="text-8xl lg:text-9xl xl:text-[12rem] font-extrabold tracking-tight text-foreground font-weight-animation font-bitcount">
-          Early<br/>
-          Developer<br/>
+        <div className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-foreground font-weight-animation font-bitcount text-center">
+          Vibe<br/>
+          Coding<br/>
           Club
         </div>
       </motion.section>

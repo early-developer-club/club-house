@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Early Developer Club",
+      name: "Vibe Coding Club",
     },
   ],
-  creator: "Early Developer Club",
+  creator: "Vibe Coding Club",
   openGraph: {
     type: "website",
     locale: "ko_KR",

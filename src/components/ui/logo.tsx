@@ -1,7 +1,7 @@
 export function Logo() {
   return (
     <span className={`text-2xl text-foreground font-bitcount`}>
-      EDC
+      Vibe
     </span>
   )
 }

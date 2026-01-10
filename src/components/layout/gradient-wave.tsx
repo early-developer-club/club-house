@@ -6,8 +6,8 @@ export function GradientWave() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationFrameRef = useRef<number | undefined>(undefined)
   const timeRef = useRef(0)
-  const mousePosRef = useRef({ x: 0.5, y: 0.5 })
-  const currentPosRef = useRef({ x: 0.5, y: 0.5 }) 
+  const mousePosRef = useRef({ x: 0, y: 0 })
+  const currentPosRef = useRef({ x: 0, y: 0 }) 
   const sourceImageRef = useRef<ImageData | null>(null)
 
   useEffect(() => {
@@ -24,6 +24,14 @@ export function GradientWave() {
     let width = window.innerWidth
     let height = window.innerHeight
     
+    // 초기 위치를 화면 중앙으로 설정하는 함수 (모바일 대응)
+    const setCenterPosition = () => {
+      const centerX = width / 2
+      const centerY = height / 2
+      mousePosRef.current = { x: centerX, y: centerY }
+      currentPosRef.current = { x: centerX, y: centerY }
+    }
+    
     const resizeCanvas = () => {
       width = window.innerWidth
       height = window.innerHeight
@@ -31,8 +39,12 @@ export function GradientWave() {
       canvas.height = height
       sourceCanvas.width = width
       sourceCanvas.height = height
+      setCenterPosition() // 리사이즈 시에도 중앙 위치 유지
       generateSourceGradient()
     }
+    
+    // 초기 위치 설정
+    setCenterPosition()
 
     const generateSourceGradient = () => {
       sourceCtx.fillStyle = '#000000'

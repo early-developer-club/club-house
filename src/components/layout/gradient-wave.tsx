@@ -24,7 +24,7 @@ export function GradientWave() {
     let width = window.innerWidth
     let height = window.innerHeight
     
-    // 초기 위치를 화면 중앙으로 설정하는 함수 (모바일 대응)
+    // 초기 위치를 화면 중앙으로 설정하는 함수
     const setCenterPosition = () => {
       const centerX = width / 2
       const centerY = height / 2
@@ -42,7 +42,6 @@ export function GradientWave() {
       generateSourceGradient()
     }
     
-    // 초기 위치 설정
     setCenterPosition()
 
     const generateSourceGradient = () => {
@@ -84,8 +83,9 @@ export function GradientWave() {
     window.addEventListener('touchstart', handleTouchStart, { passive: true })
 
     const animate = () => {
-      // 속도 조절 (0.01: 천천히)
-      timeRef.current += 0.005
+      // ▼▼▼ [속도 조절] ▼▼▼
+      // 이 값을 늘리면 물결이 더 빨리 움직입니다. (예: 0.01은 두 배 빠름)
+      timeRef.current += 0.005 
       const t = timeRef.current
 
       currentPosRef.current.x += (mousePosRef.current.x - currentPosRef.current.x) * 0.1
@@ -122,7 +122,10 @@ export function GradientWave() {
           let sourceY: number
           
           if (influence > 0.01) {
+            // ▼▼▼ [물결 굵기/두께 조절] ▼▼▼
+            // 값이 작을수록(0.01) 물결이 넓고 굵어지며, 값이 클수록(0.05) 물결이 얇고 촘촘해집니다.
             const waveWidth = 0.015; 
+            
             const ripple = Math.sin(dist * waveWidth - t * 1.5) 
             
             const noiseFrequency = 0.008;
@@ -130,6 +133,9 @@ export function GradientWave() {
 
             const strength = 450 * influence
             
+            // ▼▼▼ [소용돌이의 꼬임 정도(회전율)] ▼▼▼
+            // 중심에서 멀어질수록 픽셀을 어느 방향으로 밀어낼지 결정하는 각도(Angle)의 변화율입니다.
+            // 숫자를 줄일수록 완만해집니다.
             const offsetX = (Math.cos(dist * 0.02) + noise) * strength * ripple
             const offsetY = (Math.sin(dist * 0.02) + noise) * strength * ripple
 

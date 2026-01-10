@@ -11,9 +11,14 @@ import { Logo } from "@/components/ui/logo"
 export function Header() {
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    // KST 기준 2026년 1월 13일 23:59:59까지 활성화
+    const deadline = new Date("2026-01-13T23:59:59+09:00")
+    const now = new Date()
+    setIsDisabled(now > deadline)
   }, [])
 
   const isActive = (href: string) => mounted && pathname === href
@@ -48,18 +53,30 @@ export function Header() {
               </Link>
             ))}
           <a
-            href="https://forms.gle/3VfUQhWy9LrHyMPA6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors"
+            href={isDisabled ? "#" : "https://forms.gle/3VfUQhWy9LrHyMPA6"}
+            target={isDisabled ? undefined : "_blank"}
+            rel={isDisabled ? undefined : "noopener noreferrer"}
+            onClick={(e) => {
+              if (isDisabled) {
+                e.preventDefault()
+              }
+            }}
+            className={cn(
+              "px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors",
+              isDisabled && "opacity-50 cursor-not-allowed"
+            )}
             style={{
-              backgroundColor: "var(--brand-primary)",
+              backgroundColor: isDisabled ? "var(--muted-foreground)" : "var(--brand-primary)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--brand-primary-dark)";
+              if (!isDisabled) {
+                e.currentTarget.style.backgroundColor = "var(--brand-primary-dark)";
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "var(--brand-primary)";
+              if (!isDisabled) {
+                e.currentTarget.style.backgroundColor = "var(--brand-primary)";
+              }
             }}
           >
             참여하기(~1/13)

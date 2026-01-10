@@ -1,8 +1,7 @@
 export function ContactSection() {
   return (
     <section className="mt-20">
-      <h2 className="text-xl font-bold text-foreground text-center mb-6">Contact</h2>
-
+      <h2 className="text-xl font-bold text-foreground text-center mb-6">문의하기</h2>
       <div className="max-w-2xl mx-auto text-center space-y-6">
         <div>
           <h3 className="text-lg font-semibold text-foreground">Email</h3>

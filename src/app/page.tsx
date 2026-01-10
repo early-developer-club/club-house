@@ -2,7 +2,7 @@
 
 import { HeroSection } from "@/components/home/hero-section"
 import { JoinHero } from "@/components/join/join-hero"
-import { RecentNotices } from "@/components/join/recent-notices"
+import { ActivitySchedule } from "@/components/join/activity-schedule"
 import { DiscordCommunity } from "@/components/join/discord-community"
 import { ContactSection } from "@/components/join/contact-section"
 
@@ -12,7 +12,7 @@ export default function HomePage() {
       <div className="w-full px-4 py-4">
         <HeroSection />
         <JoinHero />
-        <RecentNotices />
+        <ActivitySchedule />
         <DiscordCommunity />
         <ContactSection />
       </div>

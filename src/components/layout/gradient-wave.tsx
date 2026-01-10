@@ -108,6 +108,9 @@ export function GradientWave() {
           let influence = Math.max(0, 1 - dist / maxRadius)
           influence = Math.pow(influence, 2) 
 
+          let sourceX: number
+          let sourceY: number
+          
           if (influence > 0.01) {
             const waveWidth = 0.015; 
             const ripple = Math.sin(dist * waveWidth - t * 1.5) 
@@ -120,11 +123,11 @@ export function GradientWave() {
             const offsetX = (Math.cos(dist * 0.02) + noise) * strength * ripple
             const offsetY = (Math.sin(dist * 0.02) + noise) * strength * ripple
 
-            var sourceX = x + offsetX
-            var sourceY = y + offsetY
+            sourceX = x + offsetX
+            sourceY = y + offsetY
           } else {
-            var sourceX = x
-            var sourceY = y
+            sourceX = x
+            sourceY = y
           }
 
           sourceX = Math.min(width - 1, Math.max(0, sourceX))

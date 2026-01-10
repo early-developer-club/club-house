@@ -15,6 +15,6 @@ export const mainNav: NavItem[] = [
   },
   {
     title: "Join",
-    href: "/join",
+    href: "https://forms.gle/3VfUQhWy9LrHyMPA6",
   },
 ]

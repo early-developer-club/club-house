@@ -30,39 +30,40 @@ export function Header() {
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
-          {mainNav.map((item) => (
-            <Link 
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "text-sm font-medium transition-colors",
-                item.title === "Join" 
-                  ? "px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors"
-                  : cn(
-                      "hover:text-brand-primary",
-                      isActive(item.href) 
-                        ? "text-brand-primary font-semibold" 
-                        : "text-white/80 font-medium"
-                    )
-              )}
-              style={item.title === "Join" ? {
-                backgroundColor: "var(--brand-primary)",
-                "--hover-bg": "var(--brand-primary-dark)"
-              } as React.CSSProperties : undefined}
-              onMouseEnter={(e) => {
-                if (item.title === "Join") {
-                  e.currentTarget.style.backgroundColor = "var(--brand-primary-dark)";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (item.title === "Join") {
-                  e.currentTarget.style.backgroundColor = "var(--brand-primary)";
-                }
-              }}
-            >
-              {item.title}
-            </Link>
-          ))}
+          {mainNav
+            .filter((item) => item.title !== "Join")
+            .map((item) => (
+              <Link 
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-colors",
+                  "hover:text-brand-primary",
+                  isActive(item.href) 
+                    ? "text-brand-primary font-semibold" 
+                    : "text-white/80 font-medium"
+                )}
+              >
+                {item.title}
+              </Link>
+            ))}
+          <a
+            href="https://forms.gle/3VfUQhWy9LrHyMPA6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors"
+            style={{
+              backgroundColor: "var(--brand-primary)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--brand-primary-dark)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "var(--brand-primary)";
+            }}
+          >
+            Join
+          </a>
         </nav>
         <div className="md:hidden">
           <button className="text-white/80">

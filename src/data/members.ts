@@ -28,7 +28,7 @@ export const members: Member[] = [
     name: "이세명(3people)",
     role: "Frontend Developer",
     bio: "운동과 게임을 좋아하는 사람",
-    profileImage: "3.webp",
+    profileImage: "3.jpg",
     links: {
       github: "https://github.com/3people",
     }
@@ -38,7 +38,7 @@ export const members: Member[] = [
     name: "안성진(anveloper)",
     role: "Full-stack Developer",
     bio: "커머스 솔루션 개발",
-    profileImage: "4.png",
+    profileImage: "4.webp",
     links: {
       linkedin: "https://www.linkedin.com/in/anveloper/",
     }
@@ -88,7 +88,7 @@ export const members: Member[] = [
     name: "박정근(JGeun)",
     role: "Android Developer",
     bio: "네트워킹을 좋아하는 개발자입니다.",
-    profileImage: "9.png",
+    profileImage: "9.jpg",
     links: {
       github: "https://github.com/JGeun",
     }
@@ -97,7 +97,7 @@ export const members: Member[] = [
     id: "10",
     name: "이규현(DiamondMonkeyCAt)",
     role: "Backend Developer",
-    profileImage: "10.png",
+    profileImage: "10.webp",
   },
   {
     id: "11",

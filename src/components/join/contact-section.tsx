@@ -3,8 +3,8 @@ export function ContactSection() {
     <section className="mt-20">
       <div className="text-center mb-20">
         <div className="bg-muted rounded-lg p-6 max-w-2xl mx-auto">
-          <h3 className="text-lg font-semibold text-foreground mb-6">운영진 모집</h3>
-          <p className="text-muted-foreground text-sm">
+          <h3 className="text-lg font-semibold mb-6" style={{ color: 'var(--primary-foreground)' }}>운영진 모집</h3>
+          <p className="text-sm" style={{ color: 'var(--primary-foreground)' }}>
             분야 관계없이 AI를 활용한 다양한 활동을 진행해보고 싶거나, 
             <br />
             커뮤니티에 기여하고 싶은 분들의 참여를 기다립니다.

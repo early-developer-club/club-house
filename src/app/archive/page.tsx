@@ -84,9 +84,13 @@ function ArchiveContent() {
                 onClick={() => handleFilterChange(filter.key)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   activeFilter === filter.key
-                    ? "bg-foreground text-background shadow-md font-bold"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    ? "shadow-md font-bold"
+                    : "hover:bg-muted/50"
                 }`}
+                style={activeFilter === filter.key 
+                  ? { backgroundColor: 'var(--foreground)', color: '#001AFF' }
+                  : { color: 'var(--primary-foreground)' }
+                }
               >
                 {filter.label}
               </button>

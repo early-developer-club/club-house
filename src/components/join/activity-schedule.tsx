@@ -17,7 +17,7 @@ export function ActivitySchedule() {
       transition={{ duration: 0.4, delay: 0.1 }}
       className="mt-20"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <h3 className="text-lg font-bold text-foreground mb-6 text-center">활동 계획</h3>
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-border">

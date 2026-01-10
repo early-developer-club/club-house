@@ -39,7 +39,6 @@ export function GradientWave() {
       canvas.height = height
       sourceCanvas.width = width
       sourceCanvas.height = height
-      setCenterPosition() // 리사이즈 시에도 중앙 위치 유지
       generateSourceGradient()
     }
     
@@ -71,7 +70,18 @@ export function GradientWave() {
         y: e.clientY
       }
     }
+    
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        mousePosRef.current = {
+          x: e.touches[0].clientX,
+          y: e.touches[0].clientY
+        }
+      }
+    }
+    
     window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
 
     const animate = () => {
       // 속도 조절 (0.01: 천천히)
@@ -182,6 +192,7 @@ export function GradientWave() {
     return () => {
       window.removeEventListener('resize', resizeCanvas)
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('touchstart', handleTouchStart)
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current)
       }

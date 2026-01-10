@@ -9,7 +9,7 @@ import { notices } from "@/data/notices"
 import { BlogItem } from "@/components/ui/blog-item"
 import { ProjectCard } from "@/components/ui/project-card"
 
-type FilterType = "all" | "developer" | "artist" | "designer"
+type FilterType = "all" | "develop" | "creative"
 
 function ArchiveContent() {
   const searchParams = useSearchParams()
@@ -18,7 +18,7 @@ function ArchiveContent() {
 
   useEffect(() => {
     const filter = searchParams.get('filter') as FilterType
-    if (filter && ['all', 'developer', 'artist', 'designer'].includes(filter)) {
+    if (filter && ['all', 'develop', 'creative'].includes(filter)) {
       setActiveFilter(filter)
     }
   }, [searchParams])
@@ -36,14 +36,21 @@ function ArchiveContent() {
 
   const filters: { key: FilterType; label: string }[] = [
     { key: "all", label: "All" },
-    { key: "developer", label: "Developer" },
-    { key: "artist", label: "Artist" },
-    { key: "designer", label: "Designer" }
+    { key: "develop", label: "Develop" },
+    { key: "creative", label: "Creative" }
   ]
 
-  const filteredNotices = activeFilter === "all" ? notices : notices.filter(notice => notice.category === activeFilter)
-  const filteredProjects = activeFilter === "all" ? projects : projects.filter(project => project.category === activeFilter)
-  const filteredBlogs = activeFilter === "all" ? blogs : blogs.filter(blog => blog.category === activeFilter)
+  const filteredNotices = activeFilter === "all" 
+    ? notices 
+    : notices.filter(notice => notice.category === activeFilter)
+  
+  const filteredProjects = activeFilter === "all" 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter)
+  
+  const filteredBlogs = activeFilter === "all" 
+    ? blogs 
+    : blogs.filter(blog => blog.category === activeFilter)
 
   return (
     <div className="min-h-screen bg-background text-foreground">

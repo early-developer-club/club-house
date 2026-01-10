@@ -28,7 +28,7 @@ export function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full bg-background border-b border-border"
+      className="sticky top-0 z-50 w-full bg-black/50 border-b border-border backdrop-blur-sm"
     >
       <div className="flex px-4 items-center justify-between h-16">
         <Link href="/" className="hover:text-muted-foreground transition-colors">

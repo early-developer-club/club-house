@@ -53,7 +53,7 @@ function ArchiveContent() {
     : blogs.filter(blog => blog.category === activeFilter)
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="w-full px-4 py-4">
         {/* Header */}
         <motion.div

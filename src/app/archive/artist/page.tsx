@@ -28,7 +28,7 @@ export default function ArtistArchivePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="w-full px-4 py-4">
         {/* 헤더 */}
         <motion.div
@@ -61,7 +61,7 @@ export default function ArtistArchivePage() {
                   <p className="text-sm text-muted-foreground mb-2">작가: {poem.author}</p>
                   <p className="text-xs text-muted-foreground">{poem.date}</p>
                 </div>
-                <div className="bg-background rounded-lg p-4 border border-border">
+                <div className="bg-black/50 rounded-lg p-4 border border-border">
                   <pre className="text-sm text-muted-foreground whitespace-pre-wrap font-mono leading-relaxed">
                     {poem.content}
                   </pre>

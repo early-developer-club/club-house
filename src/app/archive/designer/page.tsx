@@ -39,7 +39,7 @@ export default function DesignerArchivePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <div className="w-full px-4 py-4">
         {/* 헤더 */}
         <motion.div
@@ -89,7 +89,7 @@ export default function DesignerArchivePage() {
                     <p className="text-xs text-muted-foreground mb-2">사용 도구:</p>
                     <div className="flex flex-wrap gap-2">
                       {design.tools.map((tool, idx) => (
-                        <span key={idx} className="px-2 py-1 bg-background text-muted-foreground text-xs rounded border">
+                        <span key={idx} className="px-2 py-1 bg-black/50 text-muted-foreground text-xs rounded border">
                           {tool}
                         </span>
                       ))}

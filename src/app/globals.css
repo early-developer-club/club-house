@@ -8,9 +8,7 @@
   --brand-primary-foreground: #0f172a; /* 브랜드 컬러 배경 위 텍스트 색상 */
 
   /* 기본 컬러 */
-  --background: #304fec;
-  /* --background: #304fec; */
-  /* --background: #001AFF; */
+  --background: #000000; /* 검은색 (gradient-wave 배경) */
   --foreground: #ffffff; /* 흰색 */
   --primary: var(--brand-primary);
   --primary-foreground: #0f172a; /* 브랜드 컬러 배경 위 텍스트 색상 */
@@ -41,7 +39,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #0000FE;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   font-feature-settings: "rlig" 1, "calt" 1;

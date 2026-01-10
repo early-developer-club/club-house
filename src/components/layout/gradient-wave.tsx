@@ -104,7 +104,7 @@ export function GradientWave() {
           const distSq = dx * dx + dy2
           const dist = Math.sqrt(distSq)
 
-          const maxRadius = 700 
+          const maxRadius = 1000 
           let influence = Math.max(0, 1 - dist / maxRadius)
           influence = Math.pow(influence, 2) 
 

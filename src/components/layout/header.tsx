@@ -62,7 +62,7 @@ export function Header() {
               e.currentTarget.style.backgroundColor = "var(--brand-primary)";
             }}
           >
-            Join
+            참여하기(~1/13)
           </a>
         </nav>
         <div className="md:hidden">

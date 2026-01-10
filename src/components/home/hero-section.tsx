@@ -58,9 +58,9 @@ export const HeroSection = forwardRef<HTMLElement>((props, ref) => {
       </motion.section>
       <motion.section>
         <div className="my-20 text-center">
-          AI는 삶에 어떤 변화를 가져올까요?
+          가장 트렌디한 AI 커뮤니티
           <br />
-          새로운 기술을 함께 즐겁게 경험하고 삶에 적용하고 있습니다.
+          우리는 함께 학습하고 고민하며, 상상하는 모든 것에 도전합니다
         </div>
       </motion.section>
     </div>

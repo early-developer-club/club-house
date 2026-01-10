@@ -3,7 +3,7 @@
 import { HeroSection } from "@/components/home/hero-section"
 import { JoinHero } from "@/components/join/join-hero"
 import { RecentNotices } from "@/components/join/recent-notices"
-import { MailAlarm } from "@/components/join/mail-alarm"
+import { DiscordCommunity } from "@/components/join/discord-community"
 import { ContactSection } from "@/components/join/contact-section"
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
         <HeroSection />
         <JoinHero />
         <RecentNotices />
-        <MailAlarm />
+        <DiscordCommunity />
         <ContactSection />
       </div>
     </div>

@@ -11,23 +11,28 @@ export function JoinHero() {
       className="text-center space-y-8"
     >
       <div className="space-y-6">
-        <h1 
-          className="text-4xl lg:text-6xl tracking-tight text-foreground font-bitcount mb-6"
-          style={{ fontFamily: 'Bitcount Grid Single, monospace' }}
-        >
-          Join Club!
-        </h1>
         <div className="max-w-4xl mx-auto">
           <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-            AI를 삶에 적용해보세요
+          2026 상반기 클럽원 모집 (~1/13)
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">Early AI Club</strong>에 가입하여 AI 기술을 활용한 다양한 활동에 참여해보세요.
+            빠르게 변하는 AI 시대, 혼자보다는 함께일 때 더 멀리, 그리고 즐겁게 나아갈 수 있습니다.
             <br />
-            스터디, 해커톤, 테크톡 등 다양한 프로그램을 통해 함께 배우고 성장할 수 있습니다.
-            <br />
-            지금 바로 참여 신청하고 새로운 기술의 세계로 함께 떠나요!
+            지금 <strong className="text-foreground">Vibe Coding Club</strong>의 새로운 여정에 합류하세요.
           </p>
+        </div>
+        <div className="mt-8">
+          <a
+            href="https://forms.gle/3VfUQhWy9LrHyMPA6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 bg-brand-primary text-[#0f172a] font-semibold rounded-lg hover:bg-brand-primary-dark transition-colors shadow-sm hover:shadow-md"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            26년 멤버 신청하기
+          </a>
         </div>
       </div>
     </motion.section>

@@ -43,8 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         className={cn(
           buttonVariants({ variant, size, className }),
-          disabled &&
-            'bg-white/20 text-foreground opacity-50 cursor-not-allowed pointer-events-none'
+          disabled && 'bg-white/20 text-foreground opacity-50 cursor-not-allowed'
         )}
         ref={ref}
         disabled={disabled}

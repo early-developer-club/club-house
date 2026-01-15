@@ -9,7 +9,6 @@ export function ActivitySchedule() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.1 }}
-      className="mt-20"
     >
       <div className="max-w-4xl mx-auto">
         <h3 className="text-lg font-bold text-foreground mb-6 text-center">활동 계획</h3>

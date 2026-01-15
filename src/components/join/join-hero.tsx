@@ -19,7 +19,7 @@ export function JoinHero() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="text-center space-y-8"
+      className="text-center"
     >
       <div className="space-y-6">
         <div className="max-w-4xl mx-auto">

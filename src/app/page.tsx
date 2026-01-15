@@ -1,10 +1,10 @@
 'use client'
 
 import { HeroSection } from '@/components/home/hero-section'
-import { JoinHero } from '@/components/join/join-hero'
-import { ActivitySchedule } from '@/components/join/activity-schedule'
-import { DiscordCommunity } from '@/components/join/discord-community'
-import { ContactSection } from '@/components/join/contact-section'
+import { JoinHero } from '@/components/home/join-hero'
+import { ActivitySchedule } from '@/components/home/activity-schedule'
+import { DiscordCommunity } from '@/components/home/discord-community'
+import { ContactSection } from '@/components/home/contact-section'
 
 export default function HomePage() {
   return (

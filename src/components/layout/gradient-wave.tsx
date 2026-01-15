@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useEffect, useRef } from 'react'
 
@@ -7,7 +7,7 @@ export function GradientWave() {
   const animationFrameRef = useRef<number | undefined>(undefined)
   const timeRef = useRef(0)
   const mousePosRef = useRef({ x: 0, y: 0 })
-  const currentPosRef = useRef({ x: 0, y: 0 }) 
+  const currentPosRef = useRef({ x: 0, y: 0 })
   const sourceImageRef = useRef<ImageData | null>(null)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function GradientWave() {
 
     let width = window.innerWidth
     let height = window.innerHeight
-    
+
     // 초기 위치를 화면 중앙으로 설정하는 함수
     const setCenterPosition = () => {
       const centerX = width / 2
@@ -31,7 +31,7 @@ export function GradientWave() {
       mousePosRef.current = { x: centerX, y: centerY }
       currentPosRef.current = { x: centerX, y: centerY }
     }
-    
+
     const resizeCanvas = () => {
       width = window.innerWidth
       height = window.innerHeight
@@ -41,7 +41,7 @@ export function GradientWave() {
       sourceCanvas.height = height
       generateSourceGradient()
     }
-    
+
     setCenterPosition()
 
     const generateSourceGradient = () => {
@@ -49,11 +49,11 @@ export function GradientWave() {
       sourceCtx.fillRect(0, 0, width, height)
 
       const gradient = sourceCtx.createLinearGradient(0, 0, width, height)
-      gradient.addColorStop(0.3, '#0000FE') 
-      gradient.addColorStop(0.4, '#F226BB') 
-      gradient.addColorStop(0.5, '#FFD0F2') 
-      gradient.addColorStop(0.6, '#F226BB') 
-      gradient.addColorStop(0.7, '#0000FE') 
+      gradient.addColorStop(0.3, '#0000FE')
+      gradient.addColorStop(0.4, '#F226BB')
+      gradient.addColorStop(0.5, '#FFD0F2')
+      gradient.addColorStop(0.6, '#F226BB')
+      gradient.addColorStop(0.7, '#0000FE')
 
       sourceCtx.fillStyle = gradient
       sourceCtx.fillRect(0, 0, width, height)
@@ -69,7 +69,7 @@ export function GradientWave() {
         y: e.clientY
       }
     }
-    
+
     const handleTouchStart = (e: TouchEvent) => {
       if (e.touches.length > 0) {
         mousePosRef.current = {
@@ -78,19 +78,19 @@ export function GradientWave() {
         }
       }
     }
-    
+
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('touchstart', handleTouchStart, { passive: true })
 
     const animate = () => {
       // ▼▼▼ [속도 조절] ▼▼▼
       // 이 값을 늘리면 물결이 더 빨리 움직입니다. (예: 0.01은 두 배 빠름)
-      timeRef.current += 0.005 
+      timeRef.current += 0.005
       const t = timeRef.current
 
       currentPosRef.current.x += (mousePosRef.current.x - currentPosRef.current.x) * 0.1
       currentPosRef.current.y += (mousePosRef.current.y - currentPosRef.current.y) * 0.1
-      
+
       const mx = currentPosRef.current.x
       const my = currentPosRef.current.y
 
@@ -103,7 +103,7 @@ export function GradientWave() {
       const outputData = ctx.createImageData(width, height)
       const output = outputData.data
 
-      const step = 2 
+      const step = 2
 
       for (let y = 0; y < height; y += step) {
         const dy = y - my
@@ -114,25 +114,25 @@ export function GradientWave() {
           const distSq = dx * dx + dy2
           const dist = Math.sqrt(distSq)
 
-          const maxRadius = 1000 
+          const maxRadius = 1000
           let influence = Math.max(0, 1 - dist / maxRadius)
-          influence = Math.pow(influence, 2) 
+          influence = Math.pow(influence, 2)
 
           let sourceX: number
           let sourceY: number
-          
+
           if (influence > 0.01) {
             // ▼▼▼ [물결 굵기/두께 조절] ▼▼▼
             // 값이 작을수록(0.01) 물결이 넓고 굵어지며, 값이 클수록(0.05) 물결이 얇고 촘촘해집니다.
-            const waveWidth = 0.015; 
-            
-            const ripple = Math.sin(dist * waveWidth - t * 1.5) 
-            
-            const noiseFrequency = 0.008;
+            const waveWidth = 0.015
+
+            const ripple = Math.sin(dist * waveWidth - t * 1.5)
+
+            const noiseFrequency = 0.008
             const noise = Math.sin(x * noiseFrequency + t) * Math.cos(y * noiseFrequency + t)
 
             const strength = 450 * influence
-            
+
             // ▼▼▼ [소용돌이의 꼬임 정도(회전율)] ▼▼▼
             // 중심에서 멀어질수록 픽셀을 어느 방향으로 밀어낼지 결정하는 각도(Angle)의 변화율입니다.
             // 숫자를 줄일수록 완만해집니다.
@@ -148,9 +148,9 @@ export function GradientWave() {
 
           sourceX = Math.min(width - 1, Math.max(0, sourceX))
           sourceY = Math.min(height - 1, Math.max(0, sourceY))
-          
+
           const sourceIdx = (Math.floor(sourceY) * width + Math.floor(sourceX)) * 4
-          
+
           // 원본 색상 가져오기 (let으로 변경하여 수정 가능하게 함)
           let r = sourceData[sourceIdx]
           let g = sourceData[sourceIdx + 1]
@@ -161,10 +161,10 @@ export function GradientWave() {
           // 6. 전체적인 노이즈(Grain) 추가
           // Math.random()은 0~1 사이 난수 생성. 0.5를 빼서 -0.5 ~ 0.5 범위로 만듦.
           const random = Math.random() - 0.5
-          
+
           // 노이즈 강도 설정 (숫자가 클수록 더 거친 노이즈)
           // 30~50 정도가 적당합니다.
-          const noiseIntensity = 30 
+          const noiseIntensity = 30
           const noiseValue = random * noiseIntensity
 
           // RGB 각 채널에 노이즈 값을 더함
@@ -175,11 +175,11 @@ export function GradientWave() {
           // ▲▲▲ [추가된 부분 끝] ▲▲▲
 
           for (let sy = 0; sy < step; sy++) {
-            if (y + sy >= height) break;
-            const rowOffset = (y + sy) * width;
+            if (y + sy >= height) break
+            const rowOffset = (y + sy) * width
             for (let sx = 0; sx < step; sx++) {
-              if (x + sx >= width) break;
-              const destIdx = (rowOffset + (x + sx)) * 4;
+              if (x + sx >= width) break
+              const destIdx = (rowOffset + (x + sx)) * 4
               output[destIdx] = r
               output[destIdx + 1] = g
               output[destIdx + 2] = b

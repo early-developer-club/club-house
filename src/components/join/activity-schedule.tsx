@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import planData from "@/data/2026-plan.json"
+import { motion } from 'framer-motion'
+import planData from '@/data/2026-plan.json'
 
 export function ActivitySchedule() {
   return (
@@ -17,22 +17,31 @@ export function ActivitySchedule() {
           <table className="w-full border-collapse border border-border">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-3 px-4 font-semibold text-foreground border-r border-border">주차</th>
-                <th className="text-left py-3 px-4 font-semibold text-foreground border-r border-border">Creative</th>
+                <th className="text-left py-3 px-4 font-semibold text-foreground border-r border-border">
+                  Week
+                </th>
+                <th className="text-left py-3 px-4 font-semibold text-foreground border-r border-border">
+                  Creative
+                </th>
                 <th className="text-left py-3 px-4 font-semibold text-foreground">Develop</th>
               </tr>
             </thead>
             <tbody>
               {planData.map((item, index) => (
-                <tr key={index} className="hover:bg-muted/50 transition-colors border-b border-border">
+                <tr
+                  key={index}
+                  className="hover:bg-muted/50 transition-colors border-b border-border"
+                >
                   <td className="py-3 px-4 text-foreground border-r border-border">{item.week}</td>
-                  {item.type === "merged" ? (
+                  {item.type === 'merged' ? (
                     <td colSpan={2} className="py-3 px-4 text-foreground">
                       {item.content}
                     </td>
                   ) : (
                     <>
-                      <td className="py-3 px-4 text-foreground border-r border-border">{item.creative}</td>
+                      <td className="py-3 px-4 text-foreground border-r border-border">
+                        {item.creative}
+                      </td>
                       <td className="py-3 px-4 text-foreground">{item.develop}</td>
                     </>
                   )}
@@ -45,4 +54,3 @@ export function ActivitySchedule() {
     </motion.section>
   )
 }
-

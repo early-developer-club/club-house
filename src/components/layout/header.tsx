@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { mainNav } from '@/config/navigation'
 import { Logo } from '@/components/ui/logo'
+import { Button } from '@/components/ui/button'
 
 export function Header() {
   const pathname = usePathname()
@@ -52,35 +53,20 @@ export function Header() {
                 {item.title}
               </Link>
             ))}
-          <a
-            href={isDisabled ? '#' : 'https://forms.gle/3VfUQhWy9LrHyMPA6'}
-            target={isDisabled ? undefined : '_blank'}
-            rel={isDisabled ? undefined : 'noopener noreferrer'}
-            onClick={(e) => {
-              if (isDisabled) {
-                e.preventDefault()
-              }
-            }}
-            className={cn(
-              'px-4 py-2 rounded-lg shadow-sm text-[#0f172a] transition-colors',
-              isDisabled && 'opacity-50 cursor-not-allowed'
-            )}
-            style={{
-              backgroundColor: isDisabled ? 'var(--muted-foreground)' : 'var(--brand-primary)'
-            }}
-            onMouseEnter={(e) => {
-              if (!isDisabled) {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary-dark)'
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isDisabled) {
-                e.currentTarget.style.backgroundColor = 'var(--brand-primary)'
-              }
-            }}
-          >
-            참여하기(~1/13)
-          </a>
+          <Button asChild disabled={isDisabled}>
+            <a
+              href={isDisabled ? '#' : 'https://forms.gle/3VfUQhWy9LrHyMPA6'}
+              target={isDisabled ? undefined : '_blank'}
+              rel={isDisabled ? undefined : 'noopener noreferrer'}
+              onClick={(e) => {
+                if (isDisabled) {
+                  e.preventDefault()
+                }
+              }}
+            >
+              참여하기(~1/13)
+            </a>
+          </Button>
         </nav>
         <div className="md:hidden">
           <button className="text-white/80">

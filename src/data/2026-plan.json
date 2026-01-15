@@ -1,0 +1,68 @@
+[
+  {
+    "week": "1주차",
+    "type": "merged",
+    "content": "Onboarding"
+  },
+  {
+    "week": "2주차",
+    "type": "separate",
+    "creative": "에이전트의 사고방식 이해하기",
+    "develop": "Agent & Function Calling"
+  },
+  {
+    "week": "3주차",
+    "type": "separate",
+    "creative": "AI 실무 활용",
+    "develop": "MCP (Model Context Protocol)"
+  },
+  {
+    "week": "4주차",
+    "type": "separate",
+    "creative": "멀티모달 콘텐츠 제작",
+    "develop": "Multimodal (Vision & Audio)"
+  },
+  {
+    "week": "5주차",
+    "type": "separate",
+    "creative": "AI 프로토타이핑",
+    "develop": "Agentic Workflow & SDLC"
+  },
+  {
+    "week": "6주차",
+    "type": "separate",
+    "creative": "AI가 판단하고 실행하게 만들기",
+    "develop": "Sandbox & Dynamic Code Execution"
+  },
+  {
+    "week": "7주차",
+    "type": "separate",
+    "creative": "AI 자동화 시스템 구축",
+    "develop": "Multi-Agent & Orchestration"
+  },
+  {
+    "week": "8주차",
+    "type": "merged",
+    "content": "개인 프로젝트"
+  },
+  {
+    "week": "9주차",
+    "type": "merged",
+    "content": "개인 프로젝트"
+  },
+  {
+    "week": "10주차",
+    "type": "merged",
+    "content": "만우절 해커톤 (선택)"
+  },
+  {
+    "week": "11주차",
+    "type": "merged",
+    "content": "개인 프로젝트"
+  },
+  {
+    "week": "12주차",
+    "type": "merged",
+    "content": "오프라인 네트워킹 & 데모데이 (선택)"
+  }
+]

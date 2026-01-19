@@ -10,6 +10,7 @@ export function GradientWave() {
   const currentPosRef = useRef({ x: 0, y: 0 })
   const sourceImageRef = useRef<ImageData | null>(null)
   const [dimOpacity, setDimOpacity] = useState(0)
+  const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -17,6 +18,9 @@ export function GradientWave() {
 
     const ctx = canvas.getContext('2d', { willReadFrequently: true })
     if (!ctx) return
+
+    // canvas 준비 완료
+    setIsReady(true)
 
     const sourceCanvas = document.createElement('canvas')
     const sourceCtx = sourceCanvas.getContext('2d')
@@ -180,8 +184,8 @@ export function GradientWave() {
     <>
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 pointer-events-none z-0"
-        style={{ background: 'black' }}
+        className="fixed inset-0 pointer-events-none z-0 w-full h-full"
+        style={{ background: 'black', opacity: isReady ? 1 : 0 }}
       />
       {/* Hero section 이후 dim 오버레이 */}
       <div

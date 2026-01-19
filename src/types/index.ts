@@ -13,6 +13,7 @@ export interface SiteConfig {
   links: {
     twitter: string
     github: string
+    linkedin: string
   }
 }
 

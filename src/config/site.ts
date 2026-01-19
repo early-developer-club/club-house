@@ -8,5 +8,6 @@ export const siteConfig: SiteConfig = {
   links: {
     twitter: "https://twitter.com/earlydevclub",
     github: "https://github.com/early-developer-club",
+    linkedin: "https://www.linkedin.com/groups/17438022",
   },
 }

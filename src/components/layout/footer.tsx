@@ -27,9 +27,14 @@ export function Footer() {
             >
               GitHub
             </Link>
-            <span className="text-sm text-muted-foreground/40 cursor-not-allowed">
-              Instagram
-            </span>
+            <Link
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
+              LinkedIn
+            </Link>
           </div>
         </div>
       </div>

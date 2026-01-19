@@ -9,7 +9,7 @@ import { ContactSection } from '@/components/home/contact-section'
 export default function HomePage() {
   return (
     <div className="min-h-screen text-foreground">
-      <div className="flex flex-col gap-20 w-full px-4 py-4">
+      <div className="flex flex-col gap-20 w-full px-4 py-32">
         <HeroSection />
         <JoinHero />
         <ActivitySchedule />

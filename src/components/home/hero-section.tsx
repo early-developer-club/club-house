@@ -11,7 +11,7 @@ export const HeroSection = forwardRef<HTMLElement>((props, ref) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
-        className="min-h-[60vh] flex items-center justify-center pt-12"
+        className="min-h-[60vh] flex items-center justify-center pt-0"
       >
         <div className="text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-foreground font-bitcount text-center">
           Vibe

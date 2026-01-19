@@ -13,6 +13,7 @@ export function Header() {
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const [isDisabled, setIsDisabled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -23,6 +24,14 @@ export function Header() {
   }, [])
 
   const isActive = (href: string) => mounted && pathname === href
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <motion.header
@@ -69,18 +78,80 @@ export function Header() {
           </Button>
         </nav>
         <div className="md:hidden">
-          <button className="text-white/80">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+          <button
+            onClick={toggleMobileMenu}
+            className="text-white/80 hover:text-brand-primary transition-colors"
+            aria-label="메뉴 열기"
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
           </button>
         </div>
       </div>
+      {/* 모바일 메뉴 */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.2 }}
+          className="md:hidden border-t border-border bg-background"
+        >
+          <nav className="flex flex-col px-4 py-4 space-y-4">
+            {mainNav
+              .filter((item) => item.title !== 'Join')
+              .map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMobileMenu}
+                  className={cn(
+                    'text-sm font-medium transition-colors py-2',
+                    'hover:text-brand-primary',
+                    isActive(item.href)
+                      ? 'text-brand-primary font-semibold'
+                      : 'text-white/80 font-medium'
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            <Button asChild disabled={isDisabled} className="w-full">
+              <a
+                href={isDisabled ? '#' : 'https://forms.gle/3VfUQhWy9LrHyMPA6'}
+                target={isDisabled ? undefined : '_blank'}
+                rel={isDisabled ? undefined : 'noopener noreferrer'}
+                onClick={(e) => {
+                  if (isDisabled) {
+                    e.preventDefault()
+                  } else {
+                    closeMobileMenu()
+                  }
+                }}
+              >
+                참여하기(~1/13)
+              </a>
+            </Button>
+          </nav>
+        </motion.div>
+      )}
     </motion.header>
   )
 }

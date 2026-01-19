@@ -108,7 +108,7 @@ function ArchiveContent() {
           <h2 className="text-2xl font-bold text-foreground font-bitcount mb-8">Notice</h2>
           <div className="space-y-4">
             {filteredNotices.map((notice) => (
-              <div key={notice.id} className="p-4 border rounded-lg hover:bg-muted transition-colors">
+              <div key={notice.id} className="p-4 border rounded-lg hover:bg-white/10 transition-colors">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-lg">{notice.title}</h3>
                   <span className="text-sm text-muted-foreground">
@@ -116,7 +116,7 @@ function ArchiveContent() {
                   </span>
                 </div>
                 <p className="text-muted-foreground">{notice.content}</p>
-                <span className="inline-block mt-2 px-2 py-1 bg-muted text-muted-foreground text-xs rounded">
+                <span className="inline-block mt-2 px-2 py-1 bg-white/10 text-foreground text-xs rounded">
                   {notice.category}
                 </span>
               </div>

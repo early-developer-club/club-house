@@ -10,7 +10,7 @@ export function BlogItem({ blog, className = "" }: BlogItemProps) {
   return (
     <Link
       href={blog.href}
-      className={`block p-4 border ${className} hover:bg-muted/50 transition-colors`}
+      className={`block p-4 border ${className} hover:bg-white/10 transition-colors`}
       target={blog.href.startsWith("http") ? "_blank" : undefined}
       rel={blog.href.startsWith("http") ? "noreferrer" : undefined}
     >
@@ -23,7 +23,7 @@ export function BlogItem({ blog, className = "" }: BlogItemProps) {
           <span>{blog.date}</span>
         </div>
         {blog.category && (
-          <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">
+          <span className="px-2 py-1 bg-white/10 text-foreground text-xs rounded">
             {blog.category}
           </span>
         )}

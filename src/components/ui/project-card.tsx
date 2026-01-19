@@ -115,7 +115,7 @@ export function ProjectCard({ project, showCategory = true }: ProjectCardProps) 
                       className={
                         isPrimary
                           ? "px-2.5 py-1 bg-brand-primary text-[#0f172a] rounded-md text-[13px] hover:bg-brand-primary-dark transition-colors"
-                          : "px-2.5 py-1 bg-muted text-foreground rounded-md text-[13px] hover:bg-muted/70 transition-colors"
+                          : "px-2.5 py-1 bg-white/10 text-foreground rounded-md text-[13px] hover:bg-white/20 transition-colors"
                       }
                       target={link.href.startsWith("http") ? "_blank" : undefined}
                       rel={link.href.startsWith("http") ? "noreferrer" : undefined}

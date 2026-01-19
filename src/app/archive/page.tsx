@@ -60,7 +60,7 @@ function ArchiveContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="min-h-[40vh] flex flex-col items-center justify-center text-center mb-12"
         >
           <h1 className="text-4xl lg:text-6xl text-foreground font-bitcount mb-6">
             Archive

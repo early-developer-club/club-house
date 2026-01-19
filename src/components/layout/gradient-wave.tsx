@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function GradientWave() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -9,6 +9,7 @@ export function GradientWave() {
   const mousePosRef = useRef({ x: 0, y: 0 })
   const currentPosRef = useRef({ x: 0, y: 0 })
   const sourceImageRef = useRef<ImageData | null>(null)
+  const [dimOpacity, setDimOpacity] = useState(0)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -154,11 +155,39 @@ export function GradientWave() {
     }
   }, [])
 
+  // 스크롤에 따른 dim 효과
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const heroHeight = window.innerHeight * 0.4 // 40vh (hero section 높이)
+      
+      if (scrollY <= heroHeight) {
+        setDimOpacity(0)
+      } else {
+        // hero section 이후부터 점진적으로 dim 적용 (최대 0.5)
+        const progress = Math.min((scrollY - heroHeight) / (window.innerHeight * 0.3), 1)
+        setDimOpacity(progress * 0.5)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // 초기 실행
+    
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'black' }}
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 pointer-events-none z-0"
+        style={{ background: 'black' }}
+      />
+      {/* Hero section 이후 dim 오버레이 */}
+      <div
+        className="fixed inset-0 pointer-events-none z-0 bg-black transition-opacity duration-300"
+        style={{ opacity: dimOpacity }}
+      />
+    </>
   )
 }

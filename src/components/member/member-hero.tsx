@@ -8,7 +8,7 @@ export function MemberHero() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="space-y-8"
+      className="min-h-[40vh] flex items-center justify-center"
     >
       <div className="text-center space-y-6">
         <h1 className="text-4xl lg:text-6xl tracking-tight text-foreground font-bitcount mb-6">

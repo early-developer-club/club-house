@@ -4,7 +4,7 @@ export function ContactSection() {
       <div className="text-center mb-20">
         <div className="bg-white/10 rounded-lg p-6 max-w-2xl mx-auto">
           <h3 className="text-lg font-semibold text-foreground mb-6">
-            운영진 모집
+            운영진 상시 모집
           </h3>
           <p className="text-sm text-muted-foreground">
             분야 관계없이 AI를 활용한 다양한 활동을 진행해보고 싶거나,

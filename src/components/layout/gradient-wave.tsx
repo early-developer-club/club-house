@@ -9,8 +9,8 @@ export function GradientWave() {
   const mousePosRef = useRef({ x: 0, y: 0 })
   const currentPosRef = useRef({ x: 0, y: 0 })
   const sourceImageRef = useRef<ImageData | null>(null)
-  const [dimOpacity, setDimOpacity] = useState(0)
   const [isReady, setIsReady] = useState(false)
+  const scrollProgressRef = useRef(0)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -41,26 +41,83 @@ export function GradientWave() {
       canvas.height = height
       sourceCanvas.width = width
       sourceCanvas.height = height
-      generateSourceGradient()
+      generateSourceGradient(scrollProgressRef.current)
     }
 
-    const generateSourceGradient = () => {
+    // 밝은 색상 (기본)
+    const brightColors = [
+      { stop: 0.2, r: 0, g: 0, b: 254 },      // #0000FE
+      { stop: 0.4, r: 242, g: 38, b: 187 },   // #F226BB
+      { stop: 0.5, r: 255, g: 208, b: 242 },  // #FFD0F2
+      { stop: 0.6, r: 242, g: 38, b: 187 },   // #F226BB
+      { stop: 0.8, r: 0, g: 0, b: 254 },      // #0000FE
+    ]
+
+    // 색상 조합 1
+    // const darkColors = [
+    //   { stop: 0.2, r: 108, g: 142, b: 185 },  // #6C8EB9
+    //   { stop: 0.4, r: 70, g: 72, b: 105 },    // #464869
+    //   { stop: 0.5, r: 55, g: 65, b: 78 },     // #37414E
+    //   { stop: 0.6, r: 70, g: 72, b: 105 },    // #464869
+    //   { stop: 0.8, r: 108, g: 142, b: 185 },  // #6C8EB9
+    // ]
+
+    // 색상 조합 2
+    // const darkColors = [
+    //   { stop: 0.2, r: 128, g: 172, b: 221 },  // #80ACDD
+    //   { stop: 0.4, r: 71, g: 109, b: 174 },   // #476DAE
+    //   { stop: 0.5, r: 53, g: 52, b: 57 },     // #353439
+    //   { stop: 0.6, r: 71, g: 109, b: 174 },   // #476DAE
+    //   { stop: 0.8, r: 128, g: 172, b: 221 },  // #80ACDD
+    // ]
+    
+    // 색상 조합 3
+    const darkColors = [
+      { stop: 0.2, r: 114, g: 157, b: 210 },  // #729DD2
+      { stop: 0.4, r: 71, g: 109, b: 174 },   // #476DAE
+      { stop: 0.5, r: 53, g: 52, b: 57 },     // #353439
+      { stop: 0.6, r: 71, g: 109, b: 174 },   // #476DAE
+      { stop: 0.8, r: 114, g: 157, b: 210 },  // #729DD2
+    ]
+
+    const generateSourceGradient = (progress: number = 0) => {
       sourceCtx.fillStyle = '#000000'
       sourceCtx.fillRect(0, 0, width, height)
       const gradient = sourceCtx.createLinearGradient(0, 0, width, height)
-      gradient.addColorStop(0.2, '#0000FE')
-      gradient.addColorStop(0.4, '#F226BB')
-      gradient.addColorStop(0.5, '#FFD0F2')
-      gradient.addColorStop(0.6, '#F226BB')
-      gradient.addColorStop(0.8, '#0000FE')
+      
+      // 스크롤 진행도에 따라 색상 보간
+      for (let i = 0; i < brightColors.length; i++) {
+        const bright = brightColors[i]
+        const dark = darkColors[i]
+        const r = Math.round(bright.r + (dark.r - bright.r) * progress)
+        const g = Math.round(bright.g + (dark.g - bright.g) * progress)
+        const b = Math.round(bright.b + (dark.b - bright.b) * progress)
+        gradient.addColorStop(bright.stop, `rgb(${r}, ${g}, ${b})`)
+      }
+      
       sourceCtx.fillStyle = gradient
       sourceCtx.fillRect(0, 0, width, height)
       sourceImageRef.current = sourceCtx.getImageData(0, 0, width, height)
     }
 
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const heroHeight = window.innerHeight * 0.4
+      
+      if (scrollY <= heroHeight) {
+        scrollProgressRef.current = 0
+      } else {
+        const progress = Math.min((scrollY - heroHeight) / (window.innerHeight * 0.5), 1)
+        scrollProgressRef.current = progress
+      }
+      // 스크롤에 따라 그라데이션 색상 업데이트
+      generateSourceGradient(scrollProgressRef.current)
+    }
+
     setCenterPosition()
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('scroll', handleScroll)
 
     const handleMouseMove = (e: MouseEvent) => {
       mousePosRef.current = { x: e.clientX, y: e.clientY }
@@ -155,43 +212,16 @@ export function GradientWave() {
     return () => {
       window.removeEventListener('resize', resizeCanvas)
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('scroll', handleScroll)
       if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current)
     }
   }, [])
 
-  // 스크롤에 따른 dim 효과
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const heroHeight = window.innerHeight * 0.4 // 40vh (hero section 높이)
-      
-      if (scrollY <= heroHeight) {
-        setDimOpacity(0)
-      } else {
-        // hero section 이후부터 점진적으로 dim 적용 (최대 0.5)
-        const progress = Math.min((scrollY - heroHeight) / (window.innerHeight * 0.3), 1)
-        setDimOpacity(progress * 0.5)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll() // 초기 실행
-    
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 pointer-events-none z-0 w-full h-full"
-        style={{ background: 'black', opacity: isReady ? 1 : 0 }}
-      />
-      {/* Hero section 이후 dim 오버레이 */}
-      <div
-        className="fixed inset-0 pointer-events-none z-0 bg-black transition-opacity duration-300"
-        style={{ opacity: dimOpacity }}
-      />
-    </>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-0 w-full h-full"
+      style={{ background: 'black', opacity: isReady ? 1 : 0 }}
+    />
   )
 }

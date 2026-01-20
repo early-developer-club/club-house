@@ -38,7 +38,7 @@ export function ProjectCard({ project, showCategory = true }: ProjectCardProps) 
               className="block w-full h-48 object-cover"
             />
           ) : (
-            <div className="w-full h-48 bg-muted flex items-center justify-center select-none">
+            <div className="w-full h-48 bg-white/5 flex items-center justify-center select-none">
               <Logo />
             </div>
           )}

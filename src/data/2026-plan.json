@@ -8,7 +8,7 @@
   {
     "week": "2",
     "type": "separate",
-    "creative": "에이전트의 사고방식 이해하기",
+    "creative": "에이전트적 사고(Prompt Design)",
     "develop": "Agent & Function Calling",
     "creativeDate": "01/31",
     "developDate": "02/01"
@@ -16,7 +16,7 @@
   {
     "week": "3",
     "type": "separate",
-    "creative": "AI 실무 활용",
+    "creative": "노코드 자동화(n8n/Zapier)",
     "develop": "MCP (Model Context Protocol)",
     "creativeDate": "02/07",
     "developDate": "02/08"
@@ -24,7 +24,7 @@
   {
     "week": "4",
     "type": "separate",
-    "creative": "멀티모달 콘텐츠 제작",
+    "creative": "콘텐츠 제작(Vision & Content)",
     "develop": "Multimodal (Vision & Audio)",
     "creativeDate": "02/14",
     "developDate": "02/15"
@@ -32,7 +32,7 @@
   {
     "week": "5",
     "type": "separate",
-    "creative": "AI 프로토타이핑",
+    "creative": "AI Prototyping & v0",
     "develop": "Agentic Workflow & SDLC",
     "creativeDate": "02/21",
     "developDate": "02/22"
@@ -48,7 +48,7 @@
   {
     "week": "7",
     "type": "separate",
-    "creative": "AI 자동화 시스템 구축",
+    "creative": "비즈니스 자동화 시스템 구축",
     "develop": "Multi-Agent & Orchestration",
     "creativeDate": "03/07",
     "developDate": "03/08"

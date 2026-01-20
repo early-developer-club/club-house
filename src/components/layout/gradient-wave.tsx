@@ -100,7 +100,7 @@ export function GradientWave() {
       sourceImageRef.current = sourceCtx.getImageData(0, 0, width, height)
     }
 
-    const updateThemeColor = (progress: number) => {
+    const updateBackgroundColor = (progress: number) => {
       // 밝은 색상(#0000FE)에서 어두운 색상(#729DD2)으로 보간
       const brightColor = { r: 0, g: 0, b: 254 }
       const darkColor = { r: 114, g: 157, b: 210 }
@@ -111,10 +111,7 @@ export function GradientWave() {
       
       const hexColor = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
       
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute('content', hexColor)
-      }
+      document.body.style.backgroundColor = hexColor
     }
 
     const handleScroll = () => {
@@ -129,8 +126,8 @@ export function GradientWave() {
       }
       // 스크롤에 따라 그라데이션 색상 업데이트
       generateSourceGradient(scrollProgressRef.current)
-      // theme-color 업데이트
-      updateThemeColor(scrollProgressRef.current)
+      // body background-color 업데이트
+      updateBackgroundColor(scrollProgressRef.current)
     }
 
     setCenterPosition()

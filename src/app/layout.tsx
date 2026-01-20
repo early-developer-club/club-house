@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     creator: "@earlydevclub",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.png",
   },
 };
 

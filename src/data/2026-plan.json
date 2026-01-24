@@ -16,7 +16,7 @@
   {
     "week": "3",
     "type": "separate",
-    "creative": "노코드 자동화(n8n/Zapier)",
+    "creative": "No-code 자동화",
     "develop": "MCP (Model Context Protocol)",
     "creativeDate": "02/07",
     "developDate": "02/08"
@@ -32,7 +32,7 @@
   {
     "week": "5",
     "type": "separate",
-    "creative": "AI Prototyping & v0",
+    "creative": "AI Prototyping",
     "develop": "Agentic Workflow & SDLC",
     "creativeDate": "02/21",
     "developDate": "02/22"
@@ -40,7 +40,7 @@
   {
     "week": "6",
     "type": "separate",
-    "creative": "AI가 판단하고 실행하게 만들기",
+    "creative": "AI가 스스로 판단하고 실행하게 만들기",
     "develop": "Sandbox & Dynamic Code Execution",
     "creativeDate": "02/28",
     "developDate": "03/01"

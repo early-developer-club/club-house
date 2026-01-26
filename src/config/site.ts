@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   ogImage: "https://early-developer-club.vercel.app/og.jpg",
   links: {
     twitter: "https://twitter.com/earlydevclub",
-    github: "https://github.com/early-developer-club",
+    github: "https://github.com/vibe-ai-coding-club",
     linkedin: "https://www.linkedin.com/groups/17438022",
   },
 }

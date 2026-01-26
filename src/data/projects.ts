@@ -30,8 +30,8 @@ export const projects: Project[] = [
     thumbnail: "",
     author: "anveloper",
     links: [
-      { type: "primary", href: "https://early-developer-club.github.io/an-html-editor", label: "Demo" },
-      { type: "github", href: "https://github.com/early-developer-club/an-html-editor" }
+      { type: "primary", href: "https://vibe-ai-coding-club.github.io/an-html-editor", label: "Demo" },
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/an-html-editor" }
     ]
   },
   {
@@ -44,7 +44,7 @@ export const projects: Project[] = [
     thumbnail: "",
     author: "jinyoung0711",
     links: [
-      { type: "github", href: "https://github.com/early-developer-club/promptory" }
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/promptory" }
     ]
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     thumbnail: "",
     author: "jonghunlee98",
     links: [
-      { type: "github", href: "https://github.com/early-developer-club/JH-LEE" }
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/JH-LEE" }
     ]
   },
   {
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     author: "da-in",
     links: [
       { type: "primary", href: "https://club-house-sigma.vercel.app/", label: "Demo" },
-      { type: "github", href: "https://github.com/early-developer-club/club-house" }
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/club-house" }
     ]
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     author: "3people",
     links: [
       { type: "primary", href: "https://mood-time-capsule.vercel.app/", label: "Demo"  },
-      { type: "github", href: "https://github.com/early-developer-club/Mood-Time-Capsule" }
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/Mood-Time-Capsule" }
     ]
   },
   {
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     author: "HamInKyou",
     links: [
       { type: "primary", href: "https://technical-writing-with-claude-blog.vercel.app/", label: "Demo" },
-      { type: "github", href: "https://github.com/early-developer-club/technical-writing-with-claude" },
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/technical-writing-with-claude" },
     ]
   },
   {
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     thumbnail: "",
     author: "Seokzzoo",
     links: [
-      { type: "github", href: "https://github.com/early-developer-club/Ai-Resume-Mentor" },
+      { type: "github", href: "https://github.com/vibe-ai-coding-club/Ai-Resume-Mentor" },
     ]
   },
   {

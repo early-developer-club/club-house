@@ -29,12 +29,12 @@ export function ContactSection() {
         <div>
           <h3 className="text-lg font-semibold text-foreground">GitHub</h3>
           <a
-            href="https://github.com/early-developer-club"
+            href="https://github.com/vibe-ai-coding-club"
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-primary hover:text-brand-primary-dark"
           >
-            github.com/early-developer-club
+            github.com/vibe-ai-coding-club
           </a>
         </div>
 

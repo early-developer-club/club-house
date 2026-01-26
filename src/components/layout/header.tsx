@@ -12,15 +12,10 @@ import { Button } from '@/components/ui/button'
 export function Header() {
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
-  const [isDisabled, setIsDisabled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // KST 기준 2026년 1월 13일 23:59:59까지 활성화
-    const deadline = new Date('2026-01-13T23:59:59+09:00')
-    const now = new Date()
-    setIsDisabled(now > deadline)
   }, [])
 
   const isActive = (href: string) => mounted && pathname === href
@@ -62,18 +57,13 @@ export function Header() {
                 {item.title}
               </Link>
             ))}
-          <Button asChild disabled={isDisabled}>
+          <Button asChild>
             <a
-              href={isDisabled ? '#' : 'https://forms.gle/3VfUQhWy9LrHyMPA6'}
-              target={isDisabled ? undefined : '_blank'}
-              rel={isDisabled ? undefined : 'noopener noreferrer'}
-              onClick={(e) => {
-                if (isDisabled) {
-                  e.preventDefault()
-                }
-              }}
+              href="https://discord.gg/JNZYWnSuK8"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              참여하기(~1/13)
+              스터디 함께 듣기
             </a>
           </Button>
         </nav>
@@ -133,20 +123,14 @@ export function Header() {
                   {item.title}
                 </Link>
               ))}
-            <Button asChild disabled={isDisabled} className="w-full">
+            <Button asChild className="w-full">
               <a
-                href={isDisabled ? '#' : 'https://forms.gle/3VfUQhWy9LrHyMPA6'}
-                target={isDisabled ? undefined : '_blank'}
-                rel={isDisabled ? undefined : 'noopener noreferrer'}
-                onClick={(e) => {
-                  if (isDisabled) {
-                    e.preventDefault()
-                  } else {
-                    closeMobileMenu()
-                  }
-                }}
+                href="https://discord.gg/JNZYWnSuK8"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMobileMenu}
               >
-                참여하기(~1/13)
+                스터디 참관하기
               </a>
             </Button>
           </nav>

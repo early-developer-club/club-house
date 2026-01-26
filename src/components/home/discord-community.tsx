@@ -17,7 +17,7 @@ export function DiscordCommunity() {
           Discord에 합류하여 다양한 소식과 정보를 받아보실 수 있습니다.
         </p>
         <a
-          href="https://discord.gg/Me8WJwZC"
+          href="https://discord.gg/JNZYWnSuK8"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-4 bg-brand-primary text-[#0f172a] font-semibold rounded-lg hover:bg-brand-primary-dark transition-colors shadow-sm hover:shadow-md"
